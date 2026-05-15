@@ -1,0 +1,13 @@
+torch
+numpy
+pandas
+matplotlib
+scikit-learn
+seaborn
+transformers
+astropy
+lightkurve
+peft
+wandb
+wfdb
+python-dotenv
