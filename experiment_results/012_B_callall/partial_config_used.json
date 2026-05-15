@@ -1,0 +1,17 @@
+{
+  "EXPERIMENT_NAME": "B_callall",
+  "DATA_DIR": "../../data/processed_4_channel_multi_256",
+  "OUTPUT_DIR": "./results/B_callall",
+  "ARCHITECTURE": "v1.0",
+  "ALLOWED_CLASSES": [
+    "pulsating",
+    "eclipsing",
+    "rotating"
+  ],
+  "USE_BRANCH_2MIN": true,
+  "USE_BRANCH_8MIN": true,
+  "USE_BRANCH_32MIN": true,
+  "USE_BRANCH_128MIN": true,
+  "USE_PHASE_BRANCH": true,
+  "USE_EXTRA_FEATURES_BRANCH": true
+}

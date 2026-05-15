@@ -1,0 +1,13 @@
+{
+  "segment_accuracy": 0.8864583333333333,
+  "segment_f1_macro": 0.8921139335531589,
+  "segment_f1_weighted": 0.8880402819810691,
+  "segment_precision_macro": 0.8845984640005611,
+  "segment_recall_macro": 0.905489840431886,
+  "tic_meanprob_accuracy": 0.9185185185185185,
+  "tic_meanprob_f1_macro": 0.9240009708569547,
+  "tic_meanprob_f1_weighted": 0.9203214229989077,
+  "tic_meanprob_precision_macro": 0.9258937198067633,
+  "tic_meanprob_recall_macro": 0.9277619499841722,
+  "tic_count": 135
+}

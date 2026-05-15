@@ -1,0 +1,16 @@
+{
+  "EXPERIMENT_NAME": "A_c1",
+  "DATA_DIR": "../../data/processed_4_channel_binary_256",
+  "OUTPUT_DIR": "./results/A_c1",
+  "ARCHITECTURE": "v1.0",
+  "ALLOWED_CLASSES": [
+    "variable",
+    "non-variable"
+  ],
+  "USE_BRANCH_2MIN": true,
+  "USE_BRANCH_8MIN": false,
+  "USE_BRANCH_32MIN": false,
+  "USE_BRANCH_128MIN": false,
+  "USE_PHASE_BRANCH": false,
+  "USE_EXTRA_FEATURES_BRANCH": false
+}

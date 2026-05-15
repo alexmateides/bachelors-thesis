@@ -1,0 +1,33 @@
+rp{
+  "eclipsing": {
+    "precision": 0.9375,
+    "recall": 1.0,
+    "f1-score": 0.967741935483871,
+    "support": 15.0
+  },
+  "pulsating": {
+    "precision": 0.9743589743589743,
+    "recall": 0.9382716049382716,
+    "f1-score": 0.9559748427672956,
+    "support": 81.0
+  },
+  "rotating": {
+    "precision": 0.9024390243902439,
+    "recall": 0.9487179487179487,
+    "f1-score": 0.925,
+    "support": 39.0
+  },
+  "accuracy": 0.9481481481481482,
+  "macro avg": {
+    "precision": 0.9380993329164061,
+    "recall": 0.96232985121874,
+    "f1-score": 0.9495722594170556,
+    "support": 135.0
+  },
+  "weighted avg": {
+    "precision": 0.9494866583281217,
+    "recall": 0.9481481481481482,
+    "f1-score": 0.9483340096030297,
+    "support": 135.0
+  }
+}

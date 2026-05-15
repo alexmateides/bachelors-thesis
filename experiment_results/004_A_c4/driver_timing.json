@@ -1,0 +1,10 @@
+{
+  "status": "completed",
+  "start_time_local": "2026-05-13 20:30:40",
+  "end_time_local": "2026-05-13 20:48:38",
+  "duration_seconds": 1078.4137349000084,
+  "duration_minutes": 17.973562248333472,
+  "duration_hours": 0.2995593708055579,
+  "returncode": 0,
+  "log_path": "/home/truepeak/PycharmProjects/thesis/notebooks/lightcurve_transformers/turbo_trainer/results/A_c4/004_A_c4/run.log"
+}

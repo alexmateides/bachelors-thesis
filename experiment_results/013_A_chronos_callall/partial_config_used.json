@@ -1,0 +1,22 @@
+{
+  "EXPERIMENT_NAME": "A_chronos_callall",
+  "DATA_DIR": "../../data/processed_4_channel_binary_256",
+  "OUTPUT_DIR": "./phase3/results/A_chronos_callall",
+  "ARCHITECTURE": "v1.0",
+  "ALLOWED_CLASSES": [
+    "variable",
+    "non-variable"
+  ],
+  "USE_BRANCH_2MIN": true,
+  "USE_BRANCH_8MIN": true,
+  "USE_BRANCH_32MIN": true,
+  "USE_BRANCH_128MIN": true,
+  "USE_PHASE_BRANCH": true,
+  "USE_EXTRA_FEATURES_BRANCH": true,
+  "BRANCH_ENCODER_TYPE": "chronos2",
+  "USE_LORA": true,
+  "SAVE_SAFETENSORS": false,
+  "LORA_R": 8,
+  "LORA_ALPHA": 16,
+  "EPOCHS": 10
+}

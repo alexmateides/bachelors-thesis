@@ -1,0 +1,12 @@
+{
+  "epoch": 50.0,
+  "global_step": 62000,
+  "tic_meanprob_accuracy": 0.8127490039840638,
+  "tic_meanprob_f1_macro": 0.8092489287735468,
+  "tic_meanprob_f1_weighted": 0.8100724758819037,
+  "tic_meanprob_precision_macro": 0.8276628339590243,
+  "tic_meanprob_recall_macro": 0.8092536981425871,
+  "tic_count": 502,
+  "best_metric_so_far": 0.8396191754125333,
+  "best_epoch_so_far": 32.0
+}

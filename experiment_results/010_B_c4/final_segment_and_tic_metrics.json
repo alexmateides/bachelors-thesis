@@ -1,0 +1,36 @@
+{
+  "val": {
+    "segment_accuracy": 0.8829166666666667,
+    "segment_f1_macro": 0.8840349374450532,
+    "segment_f1_weighted": 0.8839698520577027,
+    "segment_precision_macro": 0.8724758017922932,
+    "segment_recall_macro": 0.8987852242338712,
+    "tic_meanprob_accuracy": 0.9037037037037037,
+    "tic_meanprob_f1_macro": 0.9109804560888689,
+    "tic_meanprob_f1_weighted": 0.9053513048264643,
+    "tic_meanprob_precision_macro": 0.9145021645021645,
+    "tic_meanprob_recall_macro": 0.9106679328901551,
+    "tic_count": 135
+  },
+  "test": {
+    "segment_accuracy": 0.8553310404127257,
+    "segment_f1_macro": 0.7855194094621359,
+    "segment_f1_weighted": 0.8516251068715931,
+    "segment_precision_macro": 0.8163865892726868,
+    "segment_recall_macro": 0.7646840378720992,
+    "tic_meanprob_accuracy": 0.8814814814814815,
+    "tic_meanprob_f1_macro": 0.826588404901658,
+    "tic_meanprob_f1_weighted": 0.8778475726266891,
+    "tic_meanprob_precision_macro": 0.8655465301732131,
+    "tic_meanprob_recall_macro": 0.7999999999999999,
+    "tic_count": 135
+  },
+  "timing": {
+    "status": "completed",
+    "start_time_local": "2026-05-13 23:05:41",
+    "end_time_local": "2026-05-13 23:10:57",
+    "duration_seconds": 315.7039700489986,
+    "duration_minutes": 5.261732834149977,
+    "duration_hours": 0.08769554723583295
+  }
+}

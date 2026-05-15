@@ -1,0 +1,692 @@
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+/opt/amdgpu/share/libdrm/amdgpu.ids: No such file or directory
+DIAG: torch.cuda.is_available(): True
+DIAG: torch.cuda.device_count(): 1
+DIAG: torch.version.cuda: None
+DIAG: cudnn_version: 3003000
+DIAG: CUDA_VISIBLE_DEVICES: 0
+DIAG: current_device: 0
+DIAG: device_name: AMD Radeon Graphics
+Metadata target_length: 256
+Metadata total_saved_segments: 113355
+Found total NPZ files: 113355
+Kept files: 113355
+Unique TIC IDs kept: 3347
+Enabled flux branches: ['32min']
+USE_PHASE_BRANCH: False
+USE_EXTRA_FEATURES_BRANCH: False
+n_segments summary: min=2, median=46.0, max=52
+Example file: 1102509698_seg0000.npz
+32min flux shape: (256,) mask shape: (256,) patch_size: 16
+Loaded 1000 records into memory...
+Loaded 2000 records into memory...
+Loaded 3000 records into memory...
+Loaded 4000 records into memory...
+Loaded 5000 records into memory...
+Loaded 6000 records into memory...
+Loaded 7000 records into memory...
+Loaded 8000 records into memory...
+Loaded 9000 records into memory...
+Loaded 10000 records into memory...
+Loaded 11000 records into memory...
+Loaded 12000 records into memory...
+Loaded 13000 records into memory...
+Loaded 14000 records into memory...
+Loaded 15000 records into memory...
+Loaded 16000 records into memory...
+Loaded 17000 records into memory...
+Loaded 18000 records into memory...
+Loaded 19000 records into memory...
+Loaded 20000 records into memory...
+Loaded 21000 records into memory...
+Loaded 22000 records into memory...
+Loaded 23000 records into memory...
+Loaded 24000 records into memory...
+Loaded 25000 records into memory...
+Loaded 26000 records into memory...
+Loaded 27000 records into memory...
+Loaded 28000 records into memory...
+Loaded 29000 records into memory...
+Loaded 30000 records into memory...
+Loaded 31000 records into memory...
+Loaded 32000 records into memory...
+Loaded 33000 records into memory...
+Loaded 34000 records into memory...
+Loaded 35000 records into memory...
+Loaded 36000 records into memory...
+Loaded 37000 records into memory...
+Loaded 38000 records into memory...
+Loaded 39000 records into memory...
+Loaded 40000 records into memory...
+Loaded 41000 records into memory...
+Loaded 42000 records into memory...
+Loaded 43000 records into memory...
+Loaded 44000 records into memory...
+Loaded 45000 records into memory...
+Loaded 46000 records into memory...
+Loaded 47000 records into memory...
+Loaded 48000 records into memory...
+Loaded 49000 records into memory...
+Loaded 50000 records into memory...
+Loaded 51000 records into memory...
+Loaded 52000 records into memory...
+Loaded 53000 records into memory...
+Loaded 54000 records into memory...
+Loaded 55000 records into memory...
+Loaded 56000 records into memory...
+Loaded 57000 records into memory...
+Loaded 58000 records into memory...
+Loaded 59000 records into memory...
+Loaded 60000 records into memory...
+Loaded 61000 records into memory...
+Loaded 62000 records into memory...
+Loaded 63000 records into memory...
+Loaded 64000 records into memory...
+Loaded 65000 records into memory...
+Loaded 66000 records into memory...
+Loaded 67000 records into memory...
+Loaded 68000 records into memory...
+Loaded 69000 records into memory...
+Loaded 70000 records into memory...
+Loaded 71000 records into memory...
+Loaded 72000 records into memory...
+Loaded 73000 records into memory...
+Loaded 74000 records into memory...
+Loaded 75000 records into memory...
+Loaded 76000 records into memory...
+Loaded 77000 records into memory...
+Loaded 78000 records into memory...
+Loaded 79000 records into memory...
+Loaded 79359 records into memory.
+Loaded 1000 records into memory...
+Loaded 2000 records into memory...
+Loaded 3000 records into memory...
+Loaded 4000 records into memory...
+Loaded 5000 records into memory...
+Loaded 6000 records into memory...
+Loaded 7000 records into memory...
+Loaded 8000 records into memory...
+Loaded 9000 records into memory...
+Loaded 10000 records into memory...
+Loaded 11000 records into memory...
+Loaded 12000 records into memory...
+Loaded 13000 records into memory...
+Loaded 14000 records into memory...
+Loaded 15000 records into memory...
+Loaded 16000 records into memory...
+Loaded 16910 records into memory.
+Loaded 1000 records into memory...
+Loaded 2000 records into memory...
+Loaded 3000 records into memory...
+Loaded 4000 records into memory...
+Loaded 5000 records into memory...
+Loaded 6000 records into memory...
+Loaded 7000 records into memory...
+Loaded 8000 records into memory...
+Loaded 9000 records into memory...
+Loaded 10000 records into memory...
+Loaded 11000 records into memory...
+Loaded 12000 records into memory...
+Loaded 13000 records into memory...
+Loaded 14000 records into memory...
+Loaded 15000 records into memory...
+Loaded 16000 records into memory...
+Loaded 17000 records into memory...
+Loaded 17086 records into memory.
+TIC-level train class counts: {'non-variable': 1210, 'variable': 1132}
+TIC-level class weights: [0.9677686 1.0344523]
+Train files: 79359, Val files: 16910, Test files: 17086
+Train TICs: 2342, Val TICs: 502, Test TICs: 503
+Class names: ['non-variable', 'variable']
+TIC-level class weights: tensor([0.9678, 1.0345])
+USE_PATCH_EMBEDDING: True
+PATCH_SIZE: {'2min': 16, '8min': 16, '32min': 16, '128min': 16, 'phase': 16}
+MIN_VALID_POINTS_PER_PATCH: 1
+MAX_POSITION_EMBEDDINGS: 256
+BRANCH_ENCODER_TYPE: transformer
+BACKBONE_MODEL_NAME: None
+USE_LORA: True
+FREEZE_BACKBONE: False
+LORA_R: 8
+LORA_ALPHA: 16
+LORA_DROPOUT: 0.1
+QWEN_PATCH_SIZE: 16
+QWEN_PATCH_STRIDE: 8
+USE_CLASS_SAMPLING: False
+RUN_TEST_EVALUATION: False
+LOAD_DATASET_IN_MEMORY: True
+32min valid fraction: mean=0.8514, min=0.0039, p05=0.4336, median=1.0000
+/home/truepeak/PycharmProjects/thesis/.venv/lib/python3.14/site-packages/torch/nn/modules/transformer.py:392: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.norm_first was True
+  warnings.warn(
+{'loss': 0.5327, 'grad_norm': 3.913370132446289, 'learning_rate': 4.9951732765501593e-05, 'epoch': 1.0}
+{'eval_loss': 0.4651511013507843, 'eval_accuracy': 0.7916026020106446, 'eval_f1_macro': 0.7905371980445933, 'eval_f1_weighted': 0.7907068145964025, 'eval_precision_macro': 0.7959582192992164, 'eval_recall_macro': 0.7908947936554687, 'eval_runtime': 1.4954, 'eval_samples_per_second': 11308.224, 'eval_steps_per_second': 177.213, 'epoch': 1.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.832669
+  eval_tic_meanprob_f1_macro: 0.830993
+  eval_tic_meanprob_f1_weighted: 0.831529
+  eval_tic_meanprob_precision_macro: 0.839509
+  eval_tic_meanprob_recall_macro: 0.830338
+  eval_tic_count: 502
+Saved new best TIC-level model to /home/truepeak/PycharmProjects/thesis/notebooks/lightcurve_transformers/turbo_trainer/results/A_c3/003_A_c3/best_tic_model.pt with tic_meanprob_f1_macro=0.830993
+{'loss': 0.4906, 'grad_norm': 1.3582340478897095, 'learning_rate': 4.9807121243714835e-05, 'epoch': 2.0}
+{'eval_loss': 0.45403382182121277, 'eval_accuracy': 0.799645180366647, 'eval_f1_macro': 0.798674788511659, 'eval_f1_weighted': 0.7988334897349618, 'eval_precision_macro': 0.8038608805942689, 'eval_recall_macro': 0.7989598981692345, 'eval_runtime': 1.4653, 'eval_samples_per_second': 11540.373, 'eval_steps_per_second': 180.852, 'epoch': 2.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.826693
+  eval_tic_meanprob_f1_macro: 0.825026
+  eval_tic_meanprob_f1_weighted: 0.825570
+  eval_tic_meanprob_precision_macro: 0.832975
+  eval_tic_meanprob_recall_macro: 0.824420
+  eval_tic_count: 502
+{'loss': 0.4743, 'grad_norm': 1.7294515371322632, 'learning_rate': 4.956650276301832e-05, 'epoch': 3.0}
+{'eval_loss': 0.4663693904876709, 'eval_accuracy': 0.8008279124778238, 'eval_f1_macro': 0.8007511082960888, 'eval_f1_weighted': 0.8007955251722729, 'eval_precision_macro': 0.8009038863045653, 'eval_recall_macro': 0.800708217007603, 'eval_runtime': 1.5301, 'eval_samples_per_second': 11051.673, 'eval_steps_per_second': 173.193, 'epoch': 3.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.852590
+  eval_tic_meanprob_f1_macro: 0.852130
+  eval_tic_meanprob_f1_weighted: 0.852392
+  eval_tic_meanprob_precision_macro: 0.853565
+  eval_tic_meanprob_recall_macro: 0.851677
+  eval_tic_count: 502
+Saved new best TIC-level model to /home/truepeak/PycharmProjects/thesis/notebooks/lightcurve_transformers/turbo_trainer/results/A_c3/003_A_c3/best_tic_model.pt with tic_meanprob_f1_macro=0.852130
+{'loss': 0.4656, 'grad_norm': 1.641419529914856, 'learning_rate': 4.9231213371062535e-05, 'epoch': 4.0}
+{'eval_loss': 0.4545065760612488, 'eval_accuracy': 0.8046126552335896, 'eval_f1_macro': 0.8046011068396873, 'eval_f1_weighted': 0.804618162929143, 'eval_precision_macro': 0.8045947514466111, 'eval_recall_macro': 0.8046290982422251, 'eval_runtime': 1.4771, 'eval_samples_per_second': 11447.879, 'eval_steps_per_second': 179.402, 'epoch': 4.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.862550
+  eval_tic_meanprob_f1_macro: 0.862208
+  eval_tic_meanprob_f1_weighted: 0.862427
+  eval_tic_meanprob_precision_macro: 0.863136
+  eval_tic_meanprob_recall_macro: 0.861838
+  eval_tic_count: 502
+Saved new best TIC-level model to /home/truepeak/PycharmProjects/thesis/notebooks/lightcurve_transformers/turbo_trainer/results/A_c3/003_A_c3/best_tic_model.pt with tic_meanprob_f1_macro=0.862208
+{'loss': 0.4596, 'grad_norm': 3.416957139968872, 'learning_rate': 4.8802035254295744e-05, 'epoch': 5.0}
+{'eval_loss': 0.4367176592350006, 'eval_accuracy': 0.8102897693672383, 'eval_f1_macro': 0.8100814852547573, 'eval_f1_weighted': 0.8101528969504651, 'eval_precision_macro': 0.8109145913942961, 'eval_recall_macro': 0.8100181834057056, 'eval_runtime': 1.6307, 'eval_samples_per_second': 10369.502, 'eval_steps_per_second': 162.503, 'epoch': 5.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.858024
+  eval_tic_meanprob_f1_weighted: 0.858304
+  eval_tic_meanprob_precision_macro: 0.860129
+  eval_tic_meanprob_recall_macro: 0.857469
+  eval_tic_count: 502
+{'loss': 0.4568, 'grad_norm': 4.435595512390137, 'learning_rate': 4.828135144835619e-05, 'epoch': 6.0}
+{'eval_loss': 0.478771448135376, 'eval_accuracy': 0.7850975753991721, 'eval_f1_macro': 0.7849772611245884, 'eval_f1_weighted': 0.7849195102727883, 'eval_precision_macro': 0.786416290089322, 'eval_recall_macro': 0.7854674168873867, 'eval_runtime': 1.5779, 'eval_samples_per_second': 10716.708, 'eval_steps_per_second': 167.944, 'epoch': 6.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.856346
+  eval_tic_meanprob_f1_weighted: 0.856528
+  eval_tic_meanprob_precision_macro: 0.856627
+  eval_tic_meanprob_recall_macro: 0.856174
+  eval_tic_count: 502
+{'loss': 0.4547, 'grad_norm': 1.384425163269043, 'learning_rate': 4.767037664069411e-05, 'epoch': 7.0}
+{'eval_loss': 0.4489367604255676, 'eval_accuracy': 0.808574807806032, 'eval_f1_macro': 0.808463851407027, 'eval_f1_weighted': 0.8085161944748623, 'eval_precision_macro': 0.8087837670504947, 'eval_recall_macro': 0.8084057459008012, 'eval_runtime': 1.3878, 'eval_samples_per_second': 12185.025, 'eval_steps_per_second': 190.954, 'epoch': 7.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.854582
+  eval_tic_meanprob_f1_macro: 0.854160
+  eval_tic_meanprob_f1_weighted: 0.854410
+  eval_tic_meanprob_precision_macro: 0.855412
+  eval_tic_meanprob_recall_macro: 0.853735
+  eval_tic_count: 502
+{'loss': 0.4512, 'grad_norm': 3.491060495376587, 'learning_rate': 4.697250330330157e-05, 'epoch': 8.0}
+{'eval_loss': 0.44594675302505493, 'eval_accuracy': 0.8034299231224128, 'eval_f1_macro': 0.8034293044310279, 'eval_f1_weighted': 0.8034253448061641, 'eval_precision_macro': 0.8035819460521056, 'eval_recall_macro': 0.8035536595700632, 'eval_runtime': 1.403, 'eval_samples_per_second': 12053.132, 'eval_steps_per_second': 188.887, 'epoch': 8.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.860558
+  eval_tic_meanprob_f1_macro: 0.860238
+  eval_tic_meanprob_f1_weighted: 0.860451
+  eval_tic_meanprob_precision_macro: 0.861009
+  eval_tic_meanprob_recall_macro: 0.859908
+  eval_tic_count: 502
+{'loss': 0.4492, 'grad_norm': 1.151598572731018, 'learning_rate': 4.619002438613701e-05, 'epoch': 9.0}
+{'eval_loss': 0.4360513985157013, 'eval_accuracy': 0.8041986989946777, 'eval_f1_macro': 0.8040928837848815, 'eval_f1_weighted': 0.804041187804523, 'eval_precision_macro': 0.8055490867492747, 'eval_recall_macro': 0.8045663025289429, 'eval_runtime': 1.3774, 'eval_samples_per_second': 12276.79, 'eval_steps_per_second': 192.392, 'epoch': 9.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.868526
+  eval_tic_meanprob_f1_macro: 0.868357
+  eval_tic_meanprob_f1_weighted: 0.868507
+  eval_tic_meanprob_precision_macro: 0.868476
+  eval_tic_meanprob_recall_macro: 0.868265
+  eval_tic_count: 502
+Saved new best TIC-level model to /home/truepeak/PycharmProjects/thesis/notebooks/lightcurve_transformers/turbo_trainer/results/A_c3/003_A_c3/best_tic_model.pt with tic_meanprob_f1_macro=0.868357
+{'loss': 0.4459, 'grad_norm': 1.0759379863739014, 'learning_rate': 4.5325293632035865e-05, 'epoch': 10.0}
+{'eval_loss': 0.4304569661617279, 'eval_accuracy': 0.8120638675340035, 'eval_f1_macro': 0.8120375743114658, 'eval_f1_weighted': 0.8120628158051021, 'eval_precision_macro': 0.8120412485782507, 'eval_recall_macro': 0.812034263669162, 'eval_runtime': 1.459, 'eval_samples_per_second': 11590.167, 'eval_steps_per_second': 181.632, 'epoch': 10.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.862550
+  eval_tic_meanprob_f1_macro: 0.862151
+  eval_tic_meanprob_f1_weighted: 0.862387
+  eval_tic_meanprob_precision_macro: 0.863426
+  eval_tic_meanprob_recall_macro: 0.861711
+  eval_tic_count: 502
+{'loss': 0.4445, 'grad_norm': 1.0383093357086182, 'learning_rate': 4.438311250715857e-05, 'epoch': 11.0}
+{'eval_loss': 0.43694254755973816, 'eval_accuracy': 0.8081017149615612, 'eval_f1_macro': 0.8078168821631535, 'eval_f1_weighted': 0.8079008881497807, 'eval_precision_macro': 0.8090607482544009, 'eval_recall_macro': 0.8077687370075934, 'eval_runtime': 1.459, 'eval_samples_per_second': 11590.436, 'eval_steps_per_second': 181.636, 'epoch': 11.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.848606
+  eval_tic_meanprob_f1_macro: 0.847908
+  eval_tic_meanprob_f1_weighted: 0.848236
+  eval_tic_meanprob_precision_macro: 0.850718
+  eval_tic_meanprob_recall_macro: 0.847308
+  eval_tic_count: 502
+{'loss': 0.4428, 'grad_norm': 2.054502248764038, 'learning_rate': 4.336567899726095e-05, 'epoch': 12.0}
+{'eval_loss': 0.4463806450366974, 'eval_accuracy': 0.8075103489059728, 'eval_f1_macro': 0.8075101058938605, 'eval_f1_weighted': 0.8075076501925158, 'eval_precision_macro': 0.8076444795155707, 'eval_recall_macro': 0.8076272245558058, 'eval_runtime': 1.5796, 'eval_samples_per_second': 10705.492, 'eval_steps_per_second': 167.768, 'epoch': 12.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.866534
+  eval_tic_meanprob_f1_macro: 0.866300
+  eval_tic_meanprob_f1_weighted: 0.866478
+  eval_tic_meanprob_precision_macro: 0.866692
+  eval_tic_meanprob_recall_macro: 0.866080
+  eval_tic_count: 502
+{'loss': 0.441, 'grad_norm': 1.033401608467102, 'learning_rate': 4.22786424591453e-05, 'epoch': 13.0}
+{'eval_loss': 0.4835423529148102, 'eval_accuracy': 0.7777646363098758, 'eval_f1_macro': 0.777180247007498, 'eval_f1_weighted': 0.7770506826356083, 'eval_precision_macro': 0.7820620402482195, 'eval_recall_macro': 0.7784464686095792, 'eval_runtime': 1.7509, 'eval_samples_per_second': 9657.661, 'eval_steps_per_second': 151.347, 'epoch': 13.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.858538
+  eval_tic_meanprob_f1_weighted: 0.858601
+  eval_tic_meanprob_precision_macro: 0.858635
+  eval_tic_meanprob_recall_macro: 0.858994
+  eval_tic_count: 502
+{'loss': 0.4378, 'grad_norm': 1.3703864812850952, 'learning_rate': 4.112549500918166e-05, 'epoch': 14.0}
+{'eval_loss': 0.41693806648254395, 'eval_accuracy': 0.8162625665286812, 'eval_f1_macro': 0.8158697950994906, 'eval_f1_weighted': 0.8159663535046183, 'eval_precision_macro': 0.8178891770795491, 'eval_recall_macro': 0.8158433409731403, 'eval_runtime': 1.5453, 'eval_samples_per_second': 10942.704, 'eval_steps_per_second': 171.485, 'epoch': 14.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.838645
+  eval_tic_meanprob_f1_macro: 0.837666
+  eval_tic_meanprob_f1_weighted: 0.838068
+  eval_tic_meanprob_precision_macro: 0.841892
+  eval_tic_meanprob_recall_macro: 0.837020
+  eval_tic_count: 502
+{'loss': 0.4363, 'grad_norm': 0.8449360132217407, 'learning_rate': 3.990977626737418e-05, 'epoch': 15.0}
+{'eval_loss': 0.42458096146583557, 'eval_accuracy': 0.8158486102897694, 'eval_f1_macro': 0.8158238669523346, 'eval_f1_weighted': 0.8158481053236992, 'eval_precision_macro': 0.8158256446739354, 'eval_recall_macro': 0.8158221805595636, 'eval_runtime': 1.4634, 'eval_samples_per_second': 11555.234, 'eval_steps_per_second': 181.084, 'epoch': 15.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.864542
+  eval_tic_meanprob_f1_macro: 0.864177
+  eval_tic_meanprob_f1_weighted: 0.864402
+  eval_tic_meanprob_precision_macro: 0.865278
+  eval_tic_meanprob_recall_macro: 0.863769
+  eval_tic_count: 502
+{'loss': 0.4355, 'grad_norm': 1.0150644779205322, 'learning_rate': 3.8638236580431e-05, 'epoch': 16.0}
+{'eval_loss': 0.41869157552719116, 'eval_accuracy': 0.8192785334121822, 'eval_f1_macro': 0.8191087912362407, 'eval_f1_weighted': 0.8191717072551224, 'eval_precision_macro': 0.8197918266658875, 'eval_recall_macro': 0.8190363109759002, 'eval_runtime': 1.6249, 'eval_samples_per_second': 10406.621, 'eval_steps_per_second': 163.084, 'epoch': 16.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.855832
+  eval_tic_meanprob_f1_weighted: 0.856162
+  eval_tic_meanprob_precision_macro: 0.859267
+  eval_tic_meanprob_recall_macro: 0.855157
+  eval_tic_count: 502
+{'loss': 0.4326, 'grad_norm': 1.054208755493164, 'learning_rate': 3.731492984484115e-05, 'epoch': 17.0}
+{'eval_loss': 0.4157803952693939, 'eval_accuracy': 0.821584861028977, 'eval_f1_macro': 0.8214699560940937, 'eval_f1_weighted': 0.8215213820789365, 'eval_precision_macro': 0.8218605305280184, 'eval_recall_macro': 0.8214027027605169, 'eval_runtime': 1.5807, 'eval_samples_per_second': 10698.044, 'eval_steps_per_second': 167.651, 'epoch': 17.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.862550
+  eval_tic_meanprob_f1_macro: 0.862151
+  eval_tic_meanprob_f1_weighted: 0.862387
+  eval_tic_meanprob_precision_macro: 0.863426
+  eval_tic_meanprob_recall_macro: 0.861711
+  eval_tic_count: 502
+{'loss': 0.4309, 'grad_norm': 2.3467023372650146, 'learning_rate': 3.594507013052463e-05, 'epoch': 18.0}
+{'eval_loss': 0.4402465522289276, 'eval_accuracy': 0.8199290360733293, 'eval_f1_macro': 0.8198423172470395, 'eval_f1_weighted': 0.8198871959927204, 'eval_precision_macro': 0.8200829979527078, 'eval_recall_macro': 0.8197856134622146, 'eval_runtime': 1.481, 'eval_samples_per_second': 11418.274, 'eval_steps_per_second': 178.938, 'epoch': 18.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.858155
+  eval_tic_meanprob_f1_weighted: 0.858399
+  eval_tic_meanprob_precision_macro: 0.859419
+  eval_tic_meanprob_recall_macro: 0.857723
+  eval_tic_count: 502
+{'loss': 0.4295, 'grad_norm': 1.5198379755020142, 'learning_rate': 3.4532900966497955e-05, 'epoch': 19.0}
+{'eval_loss': 0.4106886386871338, 'eval_accuracy': 0.8246599645180367, 'eval_f1_macro': 0.8241540703428821, 'eval_f1_weighted': 0.8242611615023414, 'eval_precision_macro': 0.827125154300542, 'eval_recall_macro': 0.8241572080084324, 'eval_runtime': 1.4013, 'eval_samples_per_second': 12067.206, 'eval_steps_per_second': 189.108, 'epoch': 19.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.855563
+  eval_tic_meanprob_f1_weighted: 0.855948
+  eval_tic_meanprob_precision_macro: 0.861040
+  eval_tic_meanprob_recall_macro: 0.854775
+  eval_tic_count: 502
+{'loss': 0.4278, 'grad_norm': 1.4597022533416748, 'learning_rate': 3.308626350149051e-05, 'epoch': 20.0}
+{'eval_loss': 0.4066030979156494, 'eval_accuracy': 0.8239503252513306, 'eval_f1_macro': 0.8232062911402973, 'eval_f1_weighted': 0.8233365140658383, 'eval_precision_macro': 0.8278738615453972, 'eval_recall_macro': 0.8233198851968169, 'eval_runtime': 1.523, 'eval_samples_per_second': 11103.084, 'eval_steps_per_second': 173.999, 'epoch': 20.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.850598
+  eval_tic_meanprob_f1_macro: 0.849160
+  eval_tic_meanprob_f1_weighted: 0.849630
+  eval_tic_meanprob_precision_macro: 0.857534
+  eval_tic_meanprob_recall_macro: 0.848348
+  eval_tic_count: 502
+{'loss': 0.4263, 'grad_norm': 1.2003812789916992, 'learning_rate': 3.1608532552145794e-05, 'epoch': 21.0}
+{'eval_loss': 0.4191369116306305, 'eval_accuracy': 0.8189828503843879, 'eval_f1_macro': 0.8188493821315017, 'eval_f1_weighted': 0.8189052119889181, 'eval_precision_macro': 0.8193277170780524, 'eval_recall_macro': 0.8187802105126081, 'eval_runtime': 1.6289, 'eval_samples_per_second': 10381.41, 'eval_steps_per_second': 162.689, 'epoch': 21.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.856060
+  eval_tic_meanprob_f1_weighted: 0.856334
+  eval_tic_meanprob_precision_macro: 0.857927
+  eval_tic_meanprob_recall_macro: 0.855538
+  eval_tic_count: 502
+{'loss': 0.4247, 'grad_norm': 2.424539089202881, 'learning_rate': 3.0107913302693237e-05, 'epoch': 22.0}
+{'eval_loss': 0.41097182035446167, 'eval_accuracy': 0.8246599645180367, 'eval_f1_macro': 0.8243683870782221, 'eval_f1_weighted': 0.824449639427198, 'eval_precision_macro': 0.8258647427406584, 'eval_recall_macro': 0.8243036030944932, 'eval_runtime': 1.4099, 'eval_samples_per_second': 11993.87, 'eval_steps_per_second': 187.958, 'epoch': 22.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.855747
+  eval_tic_meanprob_f1_weighted: 0.856095
+  eval_tic_meanprob_precision_macro: 0.859809
+  eval_tic_meanprob_recall_macro: 0.855030
+  eval_tic_count: 502
+{'loss': 0.4224, 'grad_norm': 1.3030637502670288, 'learning_rate': 2.858790650224554e-05, 'epoch': 23.0}
+{'eval_loss': 0.42241883277893066, 'eval_accuracy': 0.8195150798344175, 'eval_f1_macro': 0.8194394857579994, 'eval_f1_weighted': 0.8194814339160118, 'eval_precision_macro': 0.8196266618503938, 'eval_recall_macro': 0.8193883922771052, 'eval_runtime': 1.4097, 'eval_samples_per_second': 11995.12, 'eval_steps_per_second': 187.978, 'epoch': 23.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.858155
+  eval_tic_meanprob_f1_weighted: 0.858399
+  eval_tic_meanprob_precision_macro: 0.859419
+  eval_tic_meanprob_recall_macro: 0.857723
+  eval_tic_count: 502
+{'loss': 0.421, 'grad_norm': 1.631399393081665, 'learning_rate': 2.7055713145563864e-05, 'epoch': 24.0}
+{'eval_loss': 0.4079548418521881, 'eval_accuracy': 0.8250147841513897, 'eval_f1_macro': 0.8246407221433515, 'eval_f1_weighted': 0.8247326810492969, 'eval_precision_macro': 0.8266992218852175, 'eval_recall_macro': 0.8245966870640928, 'eval_runtime': 1.3903, 'eval_samples_per_second': 12162.456, 'eval_steps_per_second': 190.6, 'epoch': 24.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.854582
+  eval_tic_meanprob_f1_macro: 0.853699
+  eval_tic_meanprob_f1_weighted: 0.854061
+  eval_tic_meanprob_precision_macro: 0.858075
+  eval_tic_meanprob_recall_macro: 0.852972
+  eval_tic_count: 502
+{'loss': 0.4189, 'grad_norm': 1.7952584028244019, 'learning_rate': 2.5519862970729396e-05, 'epoch': 25.0}
+{'eval_loss': 0.41228151321411133, 'eval_accuracy': 0.8230041395623892, 'eval_f1_macro': 0.8227462536389301, 'eval_f1_weighted': 0.822823019681262, 'eval_precision_macro': 0.8240015568311938, 'eval_recall_macro': 0.8226771122769025, 'eval_runtime': 1.3794, 'eval_samples_per_second': 12258.972, 'eval_steps_per_second': 192.113, 'epoch': 25.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.854582
+  eval_tic_meanprob_f1_macro: 0.853787
+  eval_tic_meanprob_f1_weighted: 0.854131
+  eval_tic_meanprob_precision_macro: 0.857513
+  eval_tic_meanprob_recall_macro: 0.853099
+  eval_tic_count: 502
+{'loss': 0.4173, 'grad_norm': 0.8227085471153259, 'learning_rate': 2.39814565528019e-05, 'epoch': 26.0}
+{'eval_loss': 0.4110313951969147, 'eval_accuracy': 0.8238911886457717, 'eval_f1_macro': 0.8237491761973444, 'eval_f1_weighted': 0.8238059811767153, 'eval_precision_macro': 0.8243022886779705, 'eval_recall_macro': 0.8236750793522505, 'eval_runtime': 2.0534, 'eval_samples_per_second': 8235.274, 'eval_steps_per_second': 129.057, 'epoch': 26.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.860558
+  eval_tic_meanprob_f1_macro: 0.859989
+  eval_tic_meanprob_f1_weighted: 0.860273
+  eval_tic_meanprob_precision_macro: 0.862347
+  eval_tic_meanprob_recall_macro: 0.859399
+  eval_tic_count: 502
+{'loss': 0.4155, 'grad_norm': 1.7533258199691772, 'learning_rate': 2.245027490847443e-05, 'epoch': 27.0}
+{'eval_loss': 0.4220334589481354, 'eval_accuracy': 0.8228267297457126, 'eval_f1_macro': 0.82268266488722, 'eval_f1_weighted': 0.8227400517188187, 'eval_precision_macro': 0.8232412616838629, 'eval_recall_macro': 0.8226091401318695, 'eval_runtime': 1.7853, 'eval_samples_per_second': 9471.639, 'eval_steps_per_second': 148.432, 'epoch': 27.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.858024
+  eval_tic_meanprob_f1_weighted: 0.858304
+  eval_tic_meanprob_precision_macro: 0.860129
+  eval_tic_meanprob_recall_macro: 0.857469
+  eval_tic_count: 502
+{'loss': 0.4153, 'grad_norm': 2.042363405227661, 'learning_rate': 2.0929890084940956e-05, 'epoch': 28.0}
+{'eval_loss': 0.42394107580184937, 'eval_accuracy': 0.8253104671791839, 'eval_f1_macro': 0.8251707716140848, 'eval_f1_weighted': 0.8252268836402334, 'eval_precision_macro': 0.825718851745784, 'eval_recall_macro': 0.8250958839546971, 'eval_runtime': 1.7526, 'eval_samples_per_second': 9648.591, 'eval_steps_per_second': 151.205, 'epoch': 28.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.864542
+  eval_tic_meanprob_f1_macro: 0.864056
+  eval_tic_meanprob_f1_weighted: 0.864315
+  eval_tic_meanprob_precision_macro: 0.865956
+  eval_tic_meanprob_recall_macro: 0.863514
+  eval_tic_count: 502
+{'loss': 0.4133, 'grad_norm': 1.3263630867004395, 'learning_rate': 1.9427541397357594e-05, 'epoch': 29.0}
+{'eval_loss': 0.41781124472618103, 'eval_accuracy': 0.8242460082791248, 'eval_f1_macro': 0.8241301615947696, 'eval_f1_weighted': 0.8241814117408438, 'eval_precision_macro': 0.8245377043665988, 'eval_recall_macro': 0.8240608354405492, 'eval_runtime': 1.9128, 'eval_samples_per_second': 8840.441, 'eval_steps_per_second': 138.54, 'epoch': 29.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.862550
+  eval_tic_meanprob_f1_macro: 0.861953
+  eval_tic_meanprob_f1_weighted: 0.862242
+  eval_tic_meanprob_precision_macro: 0.864579
+  eval_tic_meanprob_recall_macro: 0.861330
+  eval_tic_count: 502
+{'loss': 0.412, 'grad_norm': 1.1498173475265503, 'learning_rate': 1.7950338944960944e-05, 'epoch': 30.0}
+{'eval_loss': 0.4246141016483307, 'eval_accuracy': 0.8231224127735068, 'eval_f1_macro': 0.82307001652422, 'eval_f1_weighted': 0.8231045872453989, 'eval_precision_macro': 0.8231633752746714, 'eval_recall_macro': 0.8230331248681672, 'eval_runtime': 2.2329, 'eval_samples_per_second': 7573.265, 'eval_steps_per_second': 118.682, 'epoch': 30.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.868526
+  eval_tic_meanprob_f1_macro: 0.868172
+  eval_tic_meanprob_f1_weighted: 0.868390
+  eval_tic_meanprob_precision_macro: 0.869282
+  eval_tic_meanprob_recall_macro: 0.867757
+  eval_tic_count: 502
+{'loss': 0.4113, 'grad_norm': 1.555242896080017, 'learning_rate': 1.6501728848525993e-05, 'epoch': 31.0}
+{'eval_loss': 0.43087637424468994, 'eval_accuracy': 0.818214074512123, 'eval_f1_macro': 0.8181989962772815, 'eval_f1_weighted': 0.8182177951155255, 'eval_precision_macro': 0.8181901036098305, 'eval_recall_macro': 0.8182161543311994, 'eval_runtime': 1.9668, 'eval_samples_per_second': 8597.568, 'eval_steps_per_second': 134.734, 'epoch': 31.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.864542
+  eval_tic_meanprob_f1_macro: 0.864281
+  eval_tic_meanprob_f1_weighted: 0.864471
+  eval_tic_meanprob_precision_macro: 0.864788
+  eval_tic_meanprob_recall_macro: 0.864023
+  eval_tic_count: 502
+{'loss': 0.41, 'grad_norm': 2.4492347240448, 'learning_rate': 1.508975459710854e-05, 'epoch': 32.0}
+{'eval_loss': 0.42204809188842773, 'eval_accuracy': 0.8232406859846245, 'eval_f1_macro': 0.8230999265362662, 'eval_f1_weighted': 0.8231565844274292, 'eval_precision_macro': 0.8236420483770932, 'eval_recall_macro': 0.8230265074297395, 'eval_runtime': 1.8546, 'eval_samples_per_second': 9117.726, 'eval_steps_per_second': 142.886, 'epoch': 32.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.860558
+  eval_tic_meanprob_f1_macro: 0.859915
+  eval_tic_meanprob_f1_weighted: 0.860218
+  eval_tic_meanprob_precision_macro: 0.862800
+  eval_tic_meanprob_recall_macro: 0.859272
+  eval_tic_count: 502
+{'loss': 0.4087, 'grad_norm': 1.3292673826217651, 'learning_rate': 1.3717710142594393e-05, 'epoch': 33.0}
+{'eval_loss': 0.4118029773235321, 'eval_accuracy': 0.8230041395623892, 'eval_f1_macro': 0.8228160171920552, 'eval_f1_weighted': 0.8228815698147487, 'eval_precision_macro': 0.8236358726150392, 'eval_recall_macro': 0.8227402367635528, 'eval_runtime': 1.7248, 'eval_samples_per_second': 9804.239, 'eval_steps_per_second': 153.644, 'epoch': 33.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.857875
+  eval_tic_meanprob_f1_weighted: 0.858191
+  eval_tic_meanprob_precision_macro: 0.861029
+  eval_tic_meanprob_recall_macro: 0.857214
+  eval_tic_count: 502
+{'loss': 0.4081, 'grad_norm': 1.4555476903915405, 'learning_rate': 1.2393213839005e-05, 'epoch': 34.0}
+{'eval_loss': 0.41605842113494873, 'eval_accuracy': 0.8238320520402129, 'eval_f1_macro': 0.8236568553957607, 'eval_f1_weighted': 0.8237199656316609, 'eval_precision_macro': 0.8244052377876274, 'eval_recall_macro': 0.823580343656029, 'eval_runtime': 1.6976, 'eval_samples_per_second': 9961.163, 'eval_steps_per_second': 156.103, 'epoch': 34.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.854582
+  eval_tic_meanprob_f1_macro: 0.853871
+  eval_tic_meanprob_f1_weighted: 0.854196
+  eval_tic_meanprob_precision_macro: 0.856998
+  eval_tic_meanprob_recall_macro: 0.853226
+  eval_tic_count: 502
+{'loss': 0.4068, 'grad_norm': 2.400394916534424, 'learning_rate': 1.1119355563574863e-05, 'epoch': 35.0}
+{'eval_loss': 0.4151538610458374, 'eval_accuracy': 0.8220579538734477, 'eval_f1_macro': 0.8219637387865733, 'eval_f1_weighted': 0.8220102408345935, 'eval_precision_macro': 0.8222482077886224, 'eval_recall_macro': 0.821902718086952, 'eval_runtime': 1.9096, 'eval_samples_per_second': 8855.169, 'eval_steps_per_second': 138.771, 'epoch': 35.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.862550
+  eval_tic_meanprob_f1_macro: 0.862024
+  eval_tic_meanprob_f1_weighted: 0.862295
+  eval_tic_meanprob_precision_macro: 0.864147
+  eval_tic_meanprob_recall_macro: 0.861457
+  eval_tic_count: 502
+{'loss': 0.4047, 'grad_norm': 1.3653144836425781, 'learning_rate': 9.903208486043108e-06, 'epoch': 36.0}
+{'eval_loss': 0.4138430953025818, 'eval_accuracy': 0.8254287403903016, 'eval_f1_macro': 0.8251443196388706, 'eval_f1_weighted': 0.8252243911700652, 'eval_precision_macro': 0.826604150316819, 'eval_recall_macro': 0.825077178848613, 'eval_runtime': 2.034, 'eval_samples_per_second': 8313.812, 'eval_steps_per_second': 130.287, 'epoch': 36.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.855832
+  eval_tic_meanprob_f1_weighted: 0.856162
+  eval_tic_meanprob_precision_macro: 0.859267
+  eval_tic_meanprob_recall_macro: 0.855157
+  eval_tic_count: 502
+{'loss': 0.4041, 'grad_norm': 3.1966049671173096, 'learning_rate': 8.747609719022564e-06, 'epoch': 37.0}
+{'eval_loss': 0.4200619161128998, 'eval_accuracy': 0.8225901833234772, 'eval_f1_macro': 0.8223940086094479, 'eval_f1_weighted': 0.8224610291523191, 'eval_precision_macro': 0.8232592513955652, 'eval_recall_macro': 0.8223188402431305, 'eval_runtime': 1.8761, 'eval_samples_per_second': 9013.351, 'eval_steps_per_second': 141.25, 'epoch': 37.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.855913
+  eval_tic_meanprob_f1_weighted: 0.856224
+  eval_tic_meanprob_precision_macro: 0.858773
+  eval_tic_meanprob_recall_macro: 0.855284
+  eval_tic_count: 502
+{'loss': 0.4037, 'grad_norm': 1.0474307537078857, 'learning_rate': 7.658975789679358e-06, 'epoch': 38.0}
+{'eval_loss': 0.4186970889568329, 'eval_accuracy': 0.8230632761679479, 'eval_f1_macro': 0.8227383349967539, 'eval_f1_weighted': 0.8228245072410484, 'eval_precision_macro': 0.8244314485376905, 'eval_recall_macro': 0.8226832050769771, 'eval_runtime': 1.4878, 'eval_samples_per_second': 11366.06, 'eval_steps_per_second': 178.12, 'epoch': 38.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.857875
+  eval_tic_meanprob_f1_weighted: 0.858191
+  eval_tic_meanprob_precision_macro: 0.861029
+  eval_tic_meanprob_recall_macro: 0.857214
+  eval_tic_count: 502
+{'loss': 0.4032, 'grad_norm': 1.306259274482727, 'learning_rate': 6.6398463390713236e-06, 'epoch': 39.0}
+{'eval_loss': 0.41302624344825745, 'eval_accuracy': 0.824541691306919, 'eval_f1_macro': 0.824178079074558, 'eval_f1_weighted': 0.82426886392321, 'eval_precision_macro': 0.8261562728974547, 'eval_recall_macro': 0.8241315916664429, 'eval_runtime': 1.6116, 'eval_samples_per_second': 10492.387, 'eval_steps_per_second': 164.428, 'epoch': 39.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.854582
+  eval_tic_meanprob_f1_macro: 0.853699
+  eval_tic_meanprob_f1_weighted: 0.854061
+  eval_tic_meanprob_precision_macro: 0.858075
+  eval_tic_meanprob_recall_macro: 0.852972
+  eval_tic_count: 502
+{'loss': 0.4021, 'grad_norm': 1.2440807819366455, 'learning_rate': 5.695880140807803e-06, 'epoch': 40.0}
+{'eval_loss': 0.41783925890922546, 'eval_accuracy': 0.8222353636901242, 'eval_f1_macro': 0.8221358412054245, 'eval_f1_weighted': 0.8221836119980803, 'eval_precision_macro': 0.8224480926844211, 'eval_recall_macro': 0.8220727638699725, 'eval_runtime': 1.4933, 'eval_samples_per_second': 11324.017, 'eval_steps_per_second': 177.461, 'epoch': 40.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.864542
+  eval_tic_meanprob_f1_macro: 0.863989
+  eval_tic_meanprob_f1_weighted: 0.864265
+  eval_tic_meanprob_precision_macro: 0.866368
+  eval_tic_meanprob_recall_macro: 0.863387
+  eval_tic_count: 502
+{'loss': 0.3997, 'grad_norm': 3.1466407775878906, 'learning_rate': 4.829279344987721e-06, 'epoch': 41.0}
+{'eval_loss': 0.41765904426574707, 'eval_accuracy': 0.8246599645180367, 'eval_f1_macro': 0.824461213020085, 'eval_f1_weighted': 0.824528278551907, 'eval_precision_macro': 0.8253606316497064, 'eval_recall_macro': 0.824384187545536, 'eval_runtime': 1.674, 'eval_samples_per_second': 10101.747, 'eval_steps_per_second': 158.307, 'epoch': 41.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.860558
+  eval_tic_meanprob_f1_macro: 0.859915
+  eval_tic_meanprob_f1_weighted: 0.860218
+  eval_tic_meanprob_precision_macro: 0.862800
+  eval_tic_meanprob_recall_macro: 0.859272
+  eval_tic_count: 502
+{'loss': 0.4015, 'grad_norm': 2.055561065673828, 'learning_rate': 4.044855801283459e-06, 'epoch': 42.0}
+{'eval_loss': 0.4157582223415375, 'eval_accuracy': 0.8231815493790656, 'eval_f1_macro': 0.8229199063061245, 'eval_f1_weighted': 0.8229971916445934, 'eval_precision_macro': 0.8242014633610635, 'eval_recall_macro': 0.8228511872824753, 'eval_runtime': 1.4598, 'eval_samples_per_second': 11584.151, 'eval_steps_per_second': 181.538, 'epoch': 42.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.854582
+  eval_tic_meanprob_f1_macro: 0.853787
+  eval_tic_meanprob_f1_weighted: 0.854131
+  eval_tic_meanprob_precision_macro: 0.857513
+  eval_tic_meanprob_recall_macro: 0.853099
+  eval_tic_count: 502
+{'loss': 0.4007, 'grad_norm': 1.392802119255066, 'learning_rate': 3.3444394675762423e-06, 'epoch': 43.0}
+{'eval_loss': 0.419253408908844, 'eval_accuracy': 0.8235363690124187, 'eval_f1_macro': 0.8233270885336761, 'eval_f1_weighted': 0.8233961295163541, 'eval_precision_macro': 0.8242814830968493, 'eval_recall_macro': 0.8232517171867986, 'eval_runtime': 1.4221, 'eval_samples_per_second': 11891.025, 'eval_steps_per_second': 186.347, 'epoch': 43.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.857875
+  eval_tic_meanprob_f1_weighted: 0.858191
+  eval_tic_meanprob_precision_macro: 0.861029
+  eval_tic_meanprob_recall_macro: 0.857214
+  eval_tic_count: 502
+{'loss': 0.4007, 'grad_norm': 1.696664810180664, 'learning_rate': 2.7314610093775738e-06, 'epoch': 44.0}
+{'eval_loss': 0.41790905594825745, 'eval_accuracy': 0.8234772324068599, 'eval_f1_macro': 0.8232657153848814, 'eval_f1_weighted': 0.8233351363561973, 'eval_precision_macro': 0.8242334399058251, 'eval_recall_macro': 0.8231905583451782, 'eval_runtime': 1.4169, 'eval_samples_per_second': 11934.923, 'eval_steps_per_second': 187.035, 'epoch': 44.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.857875
+  eval_tic_meanprob_f1_weighted: 0.858191
+  eval_tic_meanprob_precision_macro: 0.861029
+  eval_tic_meanprob_recall_macro: 0.857214
+  eval_tic_count: 502
+{'loss': 0.3999, 'grad_norm': 1.5629003047943115, 'learning_rate': 2.2087246628173402e-06, 'epoch': 45.0}
+{'eval_loss': 0.41740936040878296, 'eval_accuracy': 0.8246008279124778, 'eval_f1_macro': 0.8243554804645636, 'eval_f1_weighted': 0.8244300163981071, 'eval_precision_macro': 0.8255492657844246, 'eval_recall_macro': 0.8242827364783942, 'eval_runtime': 1.4729, 'eval_samples_per_second': 11481.073, 'eval_steps_per_second': 179.922, 'epoch': 45.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.855832
+  eval_tic_meanprob_f1_weighted: 0.856162
+  eval_tic_meanprob_precision_macro: 0.859267
+  eval_tic_meanprob_recall_macro: 0.855157
+  eval_tic_count: 502
+{'loss': 0.4004, 'grad_norm': 1.42219877243042, 'learning_rate': 1.777760189601247e-06, 'epoch': 46.0}
+{'eval_loss': 0.4184094965457916, 'eval_accuracy': 0.8235363690124187, 'eval_f1_macro': 0.8233064403171135, 'eval_f1_weighted': 0.8233788113162915, 'eval_precision_macro': 0.824390098292782, 'eval_recall_macro': 0.8232329141482219, 'eval_runtime': 1.6233, 'eval_samples_per_second': 10417.276, 'eval_steps_per_second': 163.251, 'epoch': 46.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.857875
+  eval_tic_meanprob_f1_weighted: 0.858191
+  eval_tic_meanprob_precision_macro: 0.861029
+  eval_tic_meanprob_recall_macro: 0.857214
+  eval_tic_count: 502
+{'loss': 0.4005, 'grad_norm': 2.4910528659820557, 'learning_rate': 1.4400314092565575e-06, 'epoch': 47.0}
+{'eval_loss': 0.41921672224998474, 'eval_accuracy': 0.8237137788290952, 'eval_f1_macro': 0.8235139548104127, 'eval_f1_weighted': 0.8235813822472968, 'eval_precision_macro': 0.8244114754389131, 'eval_recall_macro': 0.8234378798600276, 'eval_runtime': 1.4697, 'eval_samples_per_second': 11506.098, 'eval_steps_per_second': 180.314, 'epoch': 47.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.857875
+  eval_tic_meanprob_f1_weighted: 0.858191
+  eval_tic_meanprob_precision_macro: 0.861029
+  eval_tic_meanprob_recall_macro: 0.857214
+  eval_tic_count: 502
+{'loss': 0.3992, 'grad_norm': 1.4770941734313965, 'learning_rate': 1.197413579836098e-06, 'epoch': 48.0}
+{'eval_loss': 0.4190170466899872, 'eval_accuracy': 0.8237137788290952, 'eval_f1_macro': 0.8234616900785652, 'eval_f1_weighted': 0.8235374350552503, 'eval_precision_macro': 0.8246883618222316, 'eval_recall_macro': 0.8233908722635861, 'eval_runtime': 1.5399, 'eval_samples_per_second': 10981.091, 'eval_steps_per_second': 172.087, 'epoch': 48.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.856574
+  eval_tic_meanprob_f1_macro: 0.855832
+  eval_tic_meanprob_f1_weighted: 0.856162
+  eval_tic_meanprob_precision_macro: 0.859267
+  eval_tic_meanprob_recall_macro: 0.855157
+  eval_tic_count: 502
+{'loss': 0.3975, 'grad_norm': 1.2631391286849976, 'learning_rate': 1.0504726971118182e-06, 'epoch': 49.0}
+{'eval_loss': 0.42073366045951843, 'eval_accuracy': 0.8233589591957422, 'eval_f1_macro': 0.8231684752218329, 'eval_f1_weighted': 0.8232343723803744, 'eval_precision_macro': 0.824005647652186, 'eval_recall_macro': 0.8230924159972502, 'eval_runtime': 1.3794, 'eval_samples_per_second': 12259.315, 'eval_steps_per_second': 192.118, 'epoch': 49.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.857875
+  eval_tic_meanprob_f1_weighted: 0.858191
+  eval_tic_meanprob_precision_macro: 0.861029
+  eval_tic_meanprob_recall_macro: 0.857214
+  eval_tic_count: 502
+{'loss': 0.3989, 'grad_norm': 1.916617751121521, 'learning_rate': 1.0000246586016554e-06, 'epoch': 50.0}
+{'eval_loss': 0.41788655519485474, 'eval_accuracy': 0.823772915434654, 'eval_f1_macro': 0.823527969765142, 'eval_f1_weighted': 0.8236026198739457, 'eval_precision_macro': 0.824709601372964, 'eval_recall_macro': 0.8234560603277585, 'eval_runtime': 1.5065, 'eval_samples_per_second': 11224.494, 'eval_steps_per_second': 175.901, 'epoch': 50.0}
+
+TIC-level validation metrics for checkpoint selection:
+  eval_tic_meanprob_accuracy: 0.858566
+  eval_tic_meanprob_f1_macro: 0.857875
+  eval_tic_meanprob_f1_weighted: 0.858191
+  eval_tic_meanprob_precision_macro: 0.861029
+  eval_tic_meanprob_recall_macro: 0.857214
+  eval_tic_count: 502
+{'train_runtime': 965.0909, 'train_samples_per_second': 4111.478, 'train_steps_per_second': 64.243, 'train_loss': 0.42575616701187624, 'epoch': 50.0}
+Loaded best TIC-level model from /home/truepeak/PycharmProjects/thesis/notebooks/lightcurve_transformers/turbo_trainer/results/A_c3/003_A_c3/best_tic_model.pt at epoch=9.0 with tic_meanprob_f1_macro=0.8683566433566434
+{'train_epoch': [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 31.0, 32.0, 33.0, 34.0, 35.0, 36.0, 37.0, 38.0, 39.0, 40.0, 41.0, 42.0, 43.0, 44.0, 45.0, 46.0, 47.0, 48.0, 49.0, 50.0], 'epoch': [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 29.0, 30.0, 31.0, 32.0, 33.0, 34.0, 35.0, 36.0, 37.0, 38.0, 39.0, 40.0, 41.0, 42.0, 43.0, 44.0, 45.0, 46.0, 47.0, 48.0, 49.0, 50.0], 'train_loss': [0.5327, 0.4906, 0.4743, 0.4656, 0.4596, 0.4568, 0.4547, 0.4512, 0.4492, 0.4459, 0.4445, 0.4428, 0.441, 0.4378, 0.4363, 0.4355, 0.4326, 0.4309, 0.4295, 0.4278, 0.4263, 0.4247, 0.4224, 0.421, 0.4189, 0.4173, 0.4155, 0.4153, 0.4133, 0.412, 0.4113, 0.41, 0.4087, 0.4081, 0.4068, 0.4047, 0.4041, 0.4037, 0.4032, 0.4021, 0.3997, 0.4015, 0.4007, 0.4007, 0.3999, 0.4004, 0.4005, 0.3992, 0.3975, 0.3989], 'val_loss': [0.4651511013507843, 0.45403382182121277, 0.4663693904876709, 0.4545065760612488, 0.4367176592350006, 0.478771448135376, 0.4489367604255676, 0.44594675302505493, 0.4360513985157013, 0.4304569661617279, 0.43694254755973816, 0.4463806450366974, 0.4835423529148102, 0.41693806648254395, 0.42458096146583557, 0.41869157552719116, 0.4157803952693939, 0.4402465522289276, 0.4106886386871338, 0.4066030979156494, 0.4191369116306305, 0.41097182035446167, 0.42241883277893066, 0.4079548418521881, 0.41228151321411133, 0.4110313951969147, 0.4220334589481354, 0.42394107580184937, 0.41781124472618103, 0.4246141016483307, 0.43087637424468994, 0.42204809188842773, 0.4118029773235321, 0.41605842113494873, 0.4151538610458374, 0.4138430953025818, 0.4200619161128998, 0.4186970889568329, 0.41302624344825745, 0.41783925890922546, 0.41765904426574707, 0.4157582223415375, 0.419253408908844, 0.41790905594825745, 0.41740936040878296, 0.4184094965457916, 0.41921672224998474, 0.4190170466899872, 0.42073366045951843, 0.41788655519485474], 'val_accuracy': [0.7916026020106446, 0.799645180366647, 0.8008279124778238, 0.8046126552335896, 0.8102897693672383, 0.7850975753991721, 0.808574807806032, 0.8034299231224128, 0.8041986989946777, 0.8120638675340035, 0.8081017149615612, 0.8075103489059728, 0.7777646363098758, 0.8162625665286812, 0.8158486102897694, 0.8192785334121822, 0.821584861028977, 0.8199290360733293, 0.8246599645180367, 0.8239503252513306, 0.8189828503843879, 0.8246599645180367, 0.8195150798344175, 0.8250147841513897, 0.8230041395623892, 0.8238911886457717, 0.8228267297457126, 0.8253104671791839, 0.8242460082791248, 0.8231224127735068, 0.818214074512123, 0.8232406859846245, 0.8230041395623892, 0.8238320520402129, 0.8220579538734477, 0.8254287403903016, 0.8225901833234772, 0.8230632761679479, 0.824541691306919, 0.8222353636901242, 0.8246599645180367, 0.8231815493790656, 0.8235363690124187, 0.8234772324068599, 0.8246008279124778, 0.8235363690124187, 0.8237137788290952, 0.8237137788290952, 0.8233589591957422, 0.823772915434654], 'val_f1_macro': [0.7905371980445933, 0.798674788511659, 0.8007511082960888, 0.8046011068396873, 0.8100814852547573, 0.7849772611245884, 0.808463851407027, 0.8034293044310279, 0.8040928837848815, 0.8120375743114658, 0.8078168821631535, 0.8075101058938605, 0.777180247007498, 0.8158697950994906, 0.8158238669523346, 0.8191087912362407, 0.8214699560940937, 0.8198423172470395, 0.8241540703428821, 0.8232062911402973, 0.8188493821315017, 0.8243683870782221, 0.8194394857579994, 0.8246407221433515, 0.8227462536389301, 0.8237491761973444, 0.82268266488722, 0.8251707716140848, 0.8241301615947696, 0.82307001652422, 0.8181989962772815, 0.8230999265362662, 0.8228160171920552, 0.8236568553957607, 0.8219637387865733, 0.8251443196388706, 0.8223940086094479, 0.8227383349967539, 0.824178079074558, 0.8221358412054245, 0.824461213020085, 0.8229199063061245, 0.8233270885336761, 0.8232657153848814, 0.8243554804645636, 0.8233064403171135, 0.8235139548104127, 0.8234616900785652, 0.8231684752218329, 0.823527969765142], 'val_f1_weighted': [0.7907068145964025, 0.7988334897349618, 0.8007955251722729, 0.804618162929143, 0.8101528969504651, 0.7849195102727883, 0.8085161944748623, 0.8034253448061641, 0.804041187804523, 0.8120628158051021, 0.8079008881497807, 0.8075076501925158, 0.7770506826356083, 0.8159663535046183, 0.8158481053236992, 0.8191717072551224, 0.8215213820789365, 0.8198871959927204, 0.8242611615023414, 0.8233365140658383, 0.8189052119889181, 0.824449639427198, 0.8194814339160118, 0.8247326810492969, 0.822823019681262, 0.8238059811767153, 0.8227400517188187, 0.8252268836402334, 0.8241814117408438, 0.8231045872453989, 0.8182177951155255, 0.8231565844274292, 0.8228815698147487, 0.8237199656316609, 0.8220102408345935, 0.8252243911700652, 0.8224610291523191, 0.8228245072410484, 0.82426886392321, 0.8221836119980803, 0.824528278551907, 0.8229971916445934, 0.8233961295163541, 0.8233351363561973, 0.8244300163981071, 0.8233788113162915, 0.8235813822472968, 0.8235374350552503, 0.8232343723803744, 0.8236026198739457], 'val_precision_macro': [0.7959582192992164, 0.8038608805942689, 0.8009038863045653, 0.8045947514466111, 0.8109145913942961, 0.786416290089322, 0.8087837670504947, 0.8035819460521056, 0.8055490867492747, 0.8120412485782507, 0.8090607482544009, 0.8076444795155707, 0.7820620402482195, 0.8178891770795491, 0.8158256446739354, 0.8197918266658875, 0.8218605305280184, 0.8200829979527078, 0.827125154300542, 0.8278738615453972, 0.8193277170780524, 0.8258647427406584, 0.8196266618503938, 0.8266992218852175, 0.8240015568311938, 0.8243022886779705, 0.8232412616838629, 0.825718851745784, 0.8245377043665988, 0.8231633752746714, 0.8181901036098305, 0.8236420483770932, 0.8236358726150392, 0.8244052377876274, 0.8222482077886224, 0.826604150316819, 0.8232592513955652, 0.8244314485376905, 0.8261562728974547, 0.8224480926844211, 0.8253606316497064, 0.8242014633610635, 0.8242814830968493, 0.8242334399058251, 0.8255492657844246, 0.824390098292782, 0.8244114754389131, 0.8246883618222316, 0.824005647652186, 0.824709601372964], 'val_recall_macro': [0.7908947936554687, 0.7989598981692345, 0.800708217007603, 0.8046290982422251, 0.8100181834057056, 0.7854674168873867, 0.8084057459008012, 0.8035536595700632, 0.8045663025289429, 0.812034263669162, 0.8077687370075934, 0.8076272245558058, 0.7784464686095792, 0.8158433409731403, 0.8158221805595636, 0.8190363109759002, 0.8214027027605169, 0.8197856134622146, 0.8241572080084324, 0.8233198851968169, 0.8187802105126081, 0.8243036030944932, 0.8193883922771052, 0.8245966870640928, 0.8226771122769025, 0.8236750793522505, 0.8226091401318695, 0.8250958839546971, 0.8240608354405492, 0.8230331248681672, 0.8182161543311994, 0.8230265074297395, 0.8227402367635528, 0.823580343656029, 0.821902718086952, 0.825077178848613, 0.8223188402431305, 0.8226832050769771, 0.8241315916664429, 0.8220727638699725, 0.824384187545536, 0.8228511872824753, 0.8232517171867986, 0.8231905583451782, 0.8242827364783942, 0.8232329141482219, 0.8234378798600276, 0.8233908722635861, 0.8230924159972502, 0.8234560603277585], 'val_tic_meanprob_accuracy': [0.8326693227091634, 0.8266932270916335, 0.852589641434263, 0.8625498007968128, 0.8585657370517928, 0.8565737051792829, 0.8545816733067729, 0.8605577689243028, 0.8685258964143426, 0.8625498007968128, 0.848605577689243, 0.8665338645418327, 0.8585657370517928, 0.8386454183266933, 0.8645418326693227, 0.8565737051792829, 0.8625498007968128, 0.8585657370517928, 0.8565737051792829, 0.850597609561753, 0.8565737051792829, 0.8565737051792829, 0.8585657370517928, 0.8545816733067729, 0.8545816733067729, 0.8605577689243028, 0.8585657370517928, 0.8645418326693227, 0.8625498007968128, 0.8685258964143426, 0.8645418326693227, 0.8605577689243028, 0.8585657370517928, 0.8545816733067729, 0.8625498007968128, 0.8565737051792829, 0.8565737051792829, 0.8585657370517928, 0.8545816733067729, 0.8645418326693227, 0.8605577689243028, 0.8545816733067729, 0.8585657370517928, 0.8585657370517928, 0.8565737051792829, 0.8585657370517928, 0.8585657370517928, 0.8565737051792829, 0.8585657370517928, 0.8585657370517928], 'val_tic_meanprob_f1_macro': [0.8309926894959601, 0.8250261415127222, 0.8521296075153253, 0.8622080603391691, 0.8580243225264198, 0.8563456860781227, 0.8541597850960103, 0.8602383187234517, 0.8683566433566434, 0.8621510297482837, 0.8479078964153591, 0.8662998930685355, 0.8585382310333194, 0.8376656300028344, 0.8641774891774892, 0.8558322829746159, 0.8621510297482837, 0.8581554074221471, 0.8555626598465473, 0.8491604668213122, 0.8560596406269911, 0.8557471264367816, 0.8581554074221471, 0.8536986542000854, 0.8537873800546611, 0.8599888437325683, 0.8580243225264198, 0.8640563272588251, 0.8619532511009704, 0.868172268907563, 0.8642811704834605, 0.8599151677509886, 0.8578748619302254, 0.8538713369141755, 0.8620236373848305, 0.8558322829746159, 0.8559127439724454, 0.8578748619302254, 0.8536986542000854, 0.8639891624830665, 0.8599151677509886, 0.8537873800546611, 0.8578748619302254, 0.8578748619302254, 0.8558322829746159, 0.8578748619302254, 0.8578748619302254, 0.8558322829746159, 0.8578748619302254, 0.8578748619302254], 'val_tic_meanprob_f1_weighted': [0.8315292121241851, 0.8255704959874687, 0.8523924840404324, 0.862426774232061, 0.858303762281451, 0.8565281013590508, 0.8544097929246105, 0.8604512855240191, 0.8685070905190426, 0.8623873385177824, 0.8482362170148339, 0.8664781570481905, 0.8586011019326871, 0.8380675944433919, 0.8644017005570791, 0.8561618039544678, 0.8623873385177824, 0.8583985657211963, 0.8559478199733038, 0.8496297379202317, 0.8563338083882134, 0.8560951595915189, 0.8583985657211963, 0.8540609184489828, 0.8541308582177364, 0.8602733063284355, 0.858303762281451, 0.8643152634777571, 0.8622424873171365, 0.868389885834812, 0.8644707429822693, 0.8602175683031364, 0.8581906905572276, 0.85419606212222, 0.8622952055974665, 0.8561618039544678, 0.856223784540369, 0.8581906905572276, 0.8540609184489828, 0.8642654975761945, 0.8602175683031364, 0.8541308582177364, 0.8581906905572276, 0.8581906905572276, 0.8561618039544678, 0.8581906905572276, 0.8581906905572276, 0.8561618039544678, 0.8581906905572276, 0.8581906905572276], 'val_tic_meanprob_precision_macro': [0.8395087937031533, 0.8329745596868885, 0.8535646395424994, 0.8631362418675852, 0.8601293379433986, 0.8566269468794248, 0.855411877394636, 0.8610088453263208, 0.8684758588893658, 0.8634259259259259, 0.8507180104292018, 0.8666921313980138, 0.8586349206349206, 0.8418923275306254, 0.865277534023645, 0.8592667598887764, 0.8634259259259259, 0.8594189016602809, 0.8610396960142291, 0.8575342465753425, 0.8579266439528448, 0.8598090207887151, 0.8594189016602809, 0.8580754352030948, 0.85751287001287, 0.8623468161794152, 0.8601293379433986, 0.8659564598429227, 0.864579325381557, 0.8692821928299057, 0.8647878353634265, 0.8627998395507421, 0.8610290339157245, 0.8569983299075026, 0.8641471379177872, 0.8592667598887764, 0.8587725631768953, 0.8610290339157245, 0.8580754352030948, 0.8663676411694032, 0.8627998395507421, 0.85751287001287, 0.8610290339157245, 0.8610290339157245, 0.8592667598887764, 0.8610290339157245, 0.8610290339157245, 0.8592667598887764, 0.8610290339157245, 0.8610290339157245], 'val_tic_meanprob_recall_macro': [0.8303382747827193, 0.8244196577529911, 0.8516770738992961, 0.8618380285046952, 0.8574685796908019, 0.8561736339514118, 0.8537346870680205, 0.8599075265741932, 0.8682650904873127, 0.8617109172664728, 0.8473076250854028, 0.8660803660803661, 0.85899391454947, 0.8370195592417815, 0.8637685304351971, 0.8551567440456329, 0.8617109172664728, 0.8577228021672466, 0.8547754103309659, 0.8483483483483484, 0.8555380777603, 0.8550296328074105, 0.8577228021672466, 0.8529720196386863, 0.8530991308769087, 0.8593990816213039, 0.8574685796908019, 0.8635143079587524, 0.8613295835518058, 0.8677566455344233, 0.8640227529116418, 0.8592719703830816, 0.8572143572143571, 0.853226242115131, 0.8614566947900282, 0.8551567440456329, 0.8552838552838553, 0.8572143572143571, 0.8529720196386863, 0.86338719672053, 0.8592719703830816, 0.8530991308769087, 0.8572143572143571, 0.8572143572143571, 0.8551567440456329, 0.8572143572143571, 0.8572143572143571, 0.8551567440456329, 0.8572143572143571, 0.8572143572143571]}
+
+============================================================
+VAL METRICS
+============================================================
+segment_accuracy: 0.804199
+segment_f1_macro: 0.804093
+segment_f1_weighted: 0.804041
+segment_precision_macro: 0.805549
+segment_recall_macro: 0.804566
+tic_meanprob_accuracy: 0.868526
+tic_meanprob_f1_macro: 0.868357
+tic_meanprob_f1_weighted: 0.868507
+tic_meanprob_precision_macro: 0.868476
+tic_meanprob_recall_macro: 0.868265
+tic_count: 502
+
+VAL TIC-level classification report, mean-prob aggregation:
+              precision    recall  f1-score   support
+
+non-variable       0.87      0.88      0.87       259
+    variable       0.87      0.86      0.86       243
+
+    accuracy                           0.87       502
+   macro avg       0.87      0.87      0.87       502
+weighted avg       0.87      0.87      0.87       502
