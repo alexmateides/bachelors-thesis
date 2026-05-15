@@ -231,7 +231,7 @@ They allow richer feature interactions than traditional FFNs by enabling multipl
 \noindent $W_v, W_g \in \mathbb{R}^{d_{\mathrm{model}} \times d_{\mathrm{ff}}}, \, W_o \in \mathbb{R}^{d_{\mathrm{ff}} \times d_{\mathrm{model}}}$  and $\odot$ represents element-wise multiplication.
 
 \subsection{Computational Performance}
-Since most operations in the transformer rely on matrix multiplication, they can be efficiently computed in parallel on modern GPUs and other specialized hardware (i.e.\ AWS Trainium\footnote{https://aws.amazon.com/ai/machine-learning/trainium/}).
+Since most operations in the transformer rely on matrix multiplication, they can be efficiently computed in parallel on modern GPUs and other specialized hardware (i.e.\ AWS Trainium\footnote{\url{https://aws.amazon.com/ai/machine-learning/trainium/}}).
 Efficient parallelization and breakthroughs in hardware have been key factors in the success of transformer models, enabling them to be trained on massive volumes of data and achieve SOTA performance across various tasks.
 
 
@@ -267,7 +267,7 @@ It has been also shown $r \geq 8$ is sufficient to match the performance of full
 
 \subsubsection{QLoRA}
 
-\textbf{QLoRA} is a further improvement over \textbf{LoRA} that uses a quantized \footnote{a technique where the model's weights are converted to lower-precision representation to save memory} version of the pretrained model and memory paging which further reduces the memory overhead.
+\textbf{QLoRA} is a further improvement over \textbf{LoRA} that uses a quantized \footnote{Technique where the model's weights are converted to lower-precision representation to reduce memory usage.} version of the pretrained model and memory paging which further reduces the memory overhead.
 Quantization to 4 bits and 8 bits is commonly used in \textbf{QLoRA}, which reduces the amount of memory used to load the model itself by $75\%$ and $50\%$ respectively. \parencite{Dettmers2023}
 
 \begin{figure}[!htbp]
@@ -277,12 +277,11 @@ Quantization to 4 bits and 8 bits is commonly used in \textbf{QLoRA}, which redu
     \label{fig:03_qlora}
 \end{figure}
 
-
 \section{Other Technologies}
 
 \subsection{PyTorch}
 
-\textbf{PyTorch}\footnote{https://pytorch.org/} is an open-source Python machine learning framework, originally developed by Meta, that is mainly designed for deep learning, including computer vision and natural language processing.
+\textbf{PyTorch}\footnote{\url{https://pytorch.org/}} is an open-source Python machine learning framework, originally developed by Meta, that is mainly designed for deep learning, including computer vision and natural language processing.
 PyTorch implements many commonly used components of neural networks, such as linear layers, transformer layers, loss functions and optimizers.
 These components enable fast design, training and deployment of models in a unified environment.
 
@@ -291,24 +290,24 @@ Multiple different GPU frameworks are supported, like NVIDIA CUDA, AMD ROCm and 
 
 \subsection{HuggingFace}
 
-\textbf{HuggingFace}\footnote{https://huggingface.co} is an open-source platform and community focused on machine learning.
+\textbf{HuggingFace}\footnote{\url{https://huggingface.co}} is an open-source platform and community focused on machine learning.
 It provides multiple tools and libraries for easier training, fine-tuning and distribution of models.
 
 \subsubsection{HuggingFace Hub}
 
-\textbf{HuggingFace Hub}\footnote{https://huggingface.co/docs/hub/index} is an online platform that allows the hosting of git repositories, models, datasets and hosting of demo apps (spaces), additionally to hosting, it also supports discussion and collaboration of users.
+\textbf{HuggingFace Hub}\footnote{\url{https://huggingface.co/docs/hub/index}} is an online platform that allows the hosting of git repositories, models, datasets and hosting of demo apps (spaces), additionally to hosting, it also supports discussion and collaboration of users.
 Currently, around 2 million models 500 thousand datasets are publicly available on the Hub, with many more being stored in private repositories.
 
 Other HuggingFace libraries can then interface with the Hub, allowing the user to seamlessly access the hosted models and datasets through the code without the need for manual downloading.
 
 \subsubsection{Transformers}
 
-\textbf{Transformers}\footnote{https://huggingface.co/docs/transformers/en/index} is a library that contains many useful tools for interfacing with different machine learning models, providing a unified framework for both training and inference.
+\textbf{Transformers}\footnote{\url{https://huggingface.co/docs/transformers/en/index}} is a library that contains many useful tools for interfacing with different machine learning models, providing a unified framework for both training and inference.
 Transformers can be used to load models and datasets directly from the Hub and also contain useful abstractions, such as the Trainer class which implements a unified interface for passing parameters, monitoring and saving checkpoints during training.
 
 \subsubsection{PEFT}
 
-\textbf{PEFT}\footnote{https://huggingface.co/docs/peft/index} (Parameter-Efficient Fine-Tunig) is a library that implements efficient fine-tuning mechanisms for large pretrained models, such as \textbf{LoRA} and \textbf{QLoRA}.
+\textbf{PEFT}\footnote{\url{https://huggingface.co/docs/peft/index}} (Parameter-Efficient Fine-Tunig) is a library that implements efficient fine-tuning mechanisms for large pretrained models, such as \textbf{LoRA} and \textbf{QLoRA}.
 
 
 \section{Experimental Environment}

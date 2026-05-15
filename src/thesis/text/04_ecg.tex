@@ -154,7 +154,7 @@ We adopt the standard \textbf{train}/\textbf{validation}/\textbf{test} protocol 
 Specifically, the dataset is partitioned into three subsets: \textbf{train}, \textbf{val} and \textbf{test}.
 
 We don't take the individual recordings into account, this allows different beats from one recording to end up in different subsets.
-While this approach wouldn't be ideal for real world applications, many other authors use it in their works\parencite{Hu2022, ECGformer}, and it allows us to compare our results to theirs.
+While this approach wouldn't be ideal for real world applications, many other authors use it in their works \parencite{Hu2022, ECGformer}, and it allows us to compare our results to theirs.
 
 \textbf{Model training} is then performed exclusively on the \textbf{train} subset while performance is evaluated\footnote{Evaluation refers to the computation of metrics.} on the \textbf{val} subset after each \textbf{epoch}\footnote{One complete pass over the \textbf{train} subset during training.}.
 Based on these validation results, we select the best model \textbf{checkpoint}\footnote{The state of the model after \(n\) epochs.}, primarily according to a chosen performance metric and the discrepancy between \textbf{train} and \textbf{val} performance (large gap typically indicates overfitting).
@@ -322,9 +322,9 @@ Checkpoint at epoch $53$ was chosen for detailed evaluation on the \textbf{val} 
 The baseline model performed excellently at $\mathrm{Macro \, F1} = 0.93$.
 Additionally, we can see that the model achieved per-class performance at rate proportional to the class's support with classes \textbf{S} and \textbf{F} having the worst scores.
 
-\subsection{Qwen2.5 0.5B fine-tune}
+\subsection{Qwen 2.5 0.5B fine-tune}
 
-For the next experiment we've performed a LoRA fine-tune of pretrained a Qwen2.5 0.5B\footnote{https://huggingface.co/Qwen/Qwen2.5-0.5B} \parencite{qwen2025} LLM\@.
+For the next experiment we've performed a LoRA fine-tune of pretrained a Qwen 2.5 0.5B\footnote{\url{https://huggingface.co/Qwen/Qwen2.5-0.5B}} LLM\@. \parencite{qwen2025}
 The size of 0.5B (500 million parameters) made it small enough to effectively fine-tune on available hardware (AMD Radeon RX 9070 GPU).
 
 \subsubsection{Architecture}
