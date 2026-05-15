@@ -113,8 +113,17 @@ The following `BRANCH_ENCODER_TYPE` values are supported:
 1. `transformer` - basic transformer trained from scratch
 2. `chronos` - Chronos-2 fine-tune
 3. `qwen` - Qwen 2.5 0.5B fine-tune
+4. `cnn` - Baseline 2-layer CNN architecture
 
 ### Running Experiments
+
+0. Install required dependencies
+
+> dependencies are in `src/requirements.txt`
+
+```shell
+pip install -Ur src/requirements.txt
+```
 
 1. Go into the `trainer` directory
 
@@ -128,10 +137,9 @@ cd src/lightcurves/trainer
 python driver.py --config-dir ../example_experiment/
 ```
 
-
 ### PyTorch numerical instability
 
-When testing the function of the code in a brand new environment with updated PyTorch, the gradient exploded and training collapsed, probably due to numerical instability.
+When testing the function of the code in a brand-new environment with updated PyTorch, we encountered an issue where the gradient exploded (grad norm approached +inf) and training collapsed, probably due to numerical instability.
 It may also be an AMD ROCm distribution specific issue.
 
 PyTorch version used for all the experiments:
@@ -142,7 +150,7 @@ Version: 2.9.1+rocm6.3
 Summary: Tensors and Dynamic neural networks in Python with strong GPU acceleration
 ```
 
-PyTorch version in a new environment that produced numerical errors
+PyTorch version in a new environment that produced the gradient collapse:
 
 ```
 Name: torch
