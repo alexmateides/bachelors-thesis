@@ -277,9 +277,6 @@ class PatchEmbedding1D(nn.Module):
         patch_slope = cov_xt / t_var
         patch_slope = torch.where(patch_mask.unsqueeze(-1), patch_slope, torch.zeros_like(patch_slope))
 
-        #patch_slope = torch.clamp(patch_slope, min=-100.0, max=100.0)
-        #patch_slope = torch.zeros_like(patch_slope)
-
         # --- serialization into vector and projection ---
         patch_features = torch.cat([patch_mean, patch_std, patch_min, patch_max, patch_slope, valid_fraction], dim=-1)
         patch_features = torch.nan_to_num(patch_features, nan=0.0, posinf=0.0, neginf=0.0)

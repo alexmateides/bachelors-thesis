@@ -1,7 +1,7 @@
 {
   "EXPERIMENT_NAME": "default_original_trainer",
-  "DATA_DIR": "../../data/processed_4_channel_multi_256",
-  "OUTPUT_DIR": "../experiment_results/B_all_default",
+  "DATA_DIR": "../../../data/lightcurves/processed_4_channel_multi_256",
+  "OUTPUT_DIR": "../experiment_results/example_experiment",
   "ARCHITECTURE": "v1.4_final",
   "BRANCH_ENCODER_TYPE": "transformer",
   "BACKBONE_MODEL_NAME": null,
