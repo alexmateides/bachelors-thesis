@@ -384,6 +384,10 @@ def dump_hyperparams(cfg: ExperimentConfig, class_names: List[str], best_tic_mod
     elif cfg.BRANCH_ENCODER_TYPE == "chronos2":
         positional_encoding = "Chronos-2 pretrained backbone with internal patching and masked mean pooling over context tokens"
         patch_embedding_features = []
+    elif cfg.BRANCH_ENCODER_TYPE == "cnn":
+        # CNN baseline does not use transformer-style positional encodings or patch embeddings.
+        positional_encoding = "CNN baseline: 1D convolutional encoder on the primary flux channel (no positional encoding)"
+        patch_embedding_features = ["primary_flux_single_channel"]
     else:
         raise ValueError(f"Unknown encoder_type: {cfg.BRANCH_ENCODER_TYPE}")
     out.update(
