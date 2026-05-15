@@ -1,7 +1,7 @@
 \chapter{Astronomical Background}
 
 Light curves describe how the brightness of an astronomical object varies over time and therefore are a type of time series.
-These brightness variations are caused by different astrophysical phenomena, such as pulsations, rotation, and eclipses.
+These brightness variations are caused by different astrophysical phenomena, such as pulsations, rotation and eclipses.
 
 Since the underlying causes of variability are most often related to changes in physical properties of a star, understanding of these processes is crucial for interpretation, preprocessing and classification of light curves.
 We therefore provide a brief introduction to the relevant astronomical and astrophysical terms, concepts and processes, more detailed general overview can be found in~\textcite{Guidry2019}.
@@ -20,7 +20,7 @@ However, this is still only a tiny fraction of the estimated $10^{24}$ stars in 
 Stars are primarily classified based on their spectral characteristic and by extension their effective temperature and luminosity.
 
 \begin{itemize}
-    \item \textbf{Effective Temperature} is the temperature that a blackbody would have if it emitted the same amount of energy as electromagnetic radiation.
+    \item \textbf{Effective Temperature} is the temperature that a blackbody would have if it emitted the same amount of energy as electromagnetic radiation. \linebreak
     It is used as an approximation of surface temperature of the star.
     Additionally, effective temperature also influences the star's perceived color since it determines the shape of the emitted spectrum.
     \item \textbf{Luminosity} is a measure of electromagnetic energy that the star radiates per unit of time and is determined by the star's surface area and effective temperature.
@@ -33,7 +33,7 @@ These classes are then subdivided by Arabic numerals 0--9 for finer classificati
 
 \begin{table}[H]
     \centering
-    \footnotesize
+    \scriptsize
     \renewcommand{\arraystretch}{1.1}
 
     \begin{tabularx}{\textwidth}{X c c c}
@@ -64,7 +64,7 @@ he Sun is classified as a \textbf{G2} star in the Harvard classification system.
 
 \begin{table}[H]
     \centering
-    \footnotesize
+    \scriptsize
     \renewcommand{\arraystretch}{1.1}
     \begin{tabularx}{\textwidth}{X c}
         \toprule
@@ -95,13 +95,13 @@ he Sun is classified as a \textbf{G2} star in the Harvard classification system.
 
 \subsection{Hertzsprung--Rusel Diagram}
 
-\textbf{Hertzsprung--Russel Digram} (HR diagram) is a two-dimensional plot showing the relationship between stellar luminosities and effective temperatures.
+\textbf{Hertzsprung--Russel Digram} (HR diagram) is a two-dimensional plot showing the relationship between stellar luminosities and effective temperatures. \linebreak
 It is often used to either describe stellar distribution of some region (i.e.~a stellar cluster) or to illustrate a star's evolution in time.
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\linewidth]{images/02_hr_diagram}
-    \caption[Hertzsprung--Russell diagram]{Hertzsprung--Rusell diagram with 22,000 stars plotted from the Hipparcos Catalogue and 1,000 from the Gliese Catalogue of nearby stars. It shows stars of different masses in different stages of their lifecycles. \parencite{hr_diagram}}
+    \caption[Hertzsprung--Russell diagram]{Hertzsprung--Rusell diagram with 22,000 stars plotted from the Hipparcos Catalogue and 1,000 from the Gliese Catalogue of nearby stars.It shows stars of different masses in different stages of their lifecycles. \parencite{hr_diagram}}
     \label{fig:02_hr_diagram}
 \end{figure}
 
@@ -145,7 +145,7 @@ Stars at the upper end of this mass range may become red giants, but their cores
 
 \subsubsection{Intermediate-mass Stars}
 
-\textbf{Intermediate-sized Stars}, with masses of roughly $0.5 - 8 ,\ M_{\odot}$, are massive enough to eventually start helium fusion but generally not massive enough to sustain advanced fusion of heavier elements. \parencite{Aguirre2017}
+\textbf{Intermediate-sized Stars}, with masses of roughly 0.5--8 $M_{\odot}$, are massive enough to eventually start helium fusion but generally not massive enough to sustain advanced fusion of heavier elements. \parencite{Aguirre2017}
 
 \begin{figure}[!htbp]
     \centering
@@ -158,7 +158,7 @@ Stars at the upper end of this mass range may become red giants, but their cores
 
 \begin{enumerate}
     \item \textbf{Subgiant Phase.}  As stars fuse all the hydrogen in their cores into helium, they leave the main sequence and continue burning hydrogen in a shell around an inert helium core.
-    As more helium is produced in the shell, the core slowly increases in mass, this leads to core degeneracy and contraction in less massive stars (around $1 M_{\odot}$) or natural increase in core temperature in more massive stars. \parencite{Renzini1981}
+    As more helium is produced in the shell, the core slowly increases in mass, this leads to core degeneracy and contraction in less massive stars (around $1 \, M_{\odot}$) or natural increase in core temperature in more massive stars. \parencite{Renzini1981}
 
     \item \textbf{Red Giant Branch Phase.} The contracting helium core heats up, increasing the temperature of the hydrogen-burning shell around it, which accelerates fusion.
     The rising temperature creates pressure that causes the outer layers of the star to expand enormously, creating a red giant with a large radius and relatively cool surface.
@@ -375,8 +375,8 @@ Additionally, they're divided into two main subclasses:
 
 \begin{itemize}
     \item \textbf{Classical Cepheids.} Younger stars with very regular periods in the order of days to months.
-    They are yellow bright giants and supergiants of classes F6-K2 with masses of $3 - 10 \, M_{\odot}$.
-    \item \textbf{Type II Cepheids.} Older stars with shorter periods (order of days), they are usually fainter and have lower mass ($0.5 - 0.6 \, M_{\odot}$).
+    They are yellow bright giants and supergiants of classes F6-K2 with masses of 3--10 $M_{\odot}$.
+    \item \textbf{Type II Cepheids.} Older stars with shorter periods (order of days), they are usually fainter and have lower mass (0.5--0.6 $M_{\odot}$).
 \end{itemize}
 
 \subsubsection{Delta Scuti (DSCT)}\label{subsubsec:02-dsct}

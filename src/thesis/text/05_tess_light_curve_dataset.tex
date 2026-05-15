@@ -116,18 +116,18 @@ We therefore describe our approach of selecting appropriate preprocessing steps 
 Since different light curves might have different starting times $t_0$, we need to remap the time axis to a common reference point, making the light curves comparable.
 Zero was chosen as the time of the first observation, so all curves start at $t=0$.
 
-\[
+\begin{align}
     t' = t - t_0
-\]
+\end{align}
 
 \subsection{Flux Normalization}
 
 Experiments have shown that the transformers perform better when the flux values are normalized, so we applied a modified \textbf{min-max normalization} to the \textbf{flux} ($\Phi$) values of each light curve.
 The modified min-max normalization maps the flux values into range of $[-1, 1]$ instead of the more traditional range of $[0, 1]$, we have chosen this approach because it better represent the physical nature of the data where the flux oscillates above and below the zero centered norm.
 
-\[
+\begin{align}
     \Phi' = 2 \cdot \frac{\Phi - \Phi_{\min}}{\Phi_{\max} - \Phi_{\min}} - 1
-\]
+\end{align}
 
 We would like to add that experiments were performed with both mentioned types of normalization, however there were no measurable differences in predictive performance of the resulting models.
 
@@ -142,9 +142,9 @@ Although multiple detrending algorithms were tried with various parameters, none
 
 Flux detrending can be generally written as:
 
-\[
+\begin{align}
     \Phi' = \Phi - \Phi_{\mathrm{trend}}
-\]
+\end{align}
 
 Computation of $\Phi_{\mathrm{trend}}$ then depends on the detrending algorithm.
 
@@ -152,19 +152,19 @@ Computation of $\Phi_{\mathrm{trend}}$ then depends on the detrending algorithm.
 
 \begin{enumerate}
     \item \textbf{Running Median}
-    \[
+    \begin{align}
         \Phi_{\mathrm{trend}}(t_i) = \mathrm{median}\{\Phi(t_j): t_j \in [t_i - w/2, t_i + w/2]\}
-    \]
+    \end{align}
     Where $w$ is the size of the sliding window where median is computed.
     \item \textbf{Gaussian Smoothing}
-    \[
+    \begin{align}
         \Phi_{\mathrm{trend}} = G(\Phi;\sigma)
-    \]
+    \end{align}
     Where $G(\Phi;\sigma)$ represents a convolution of the flux $\Phi$ with a 1D gaussian kernel with standard deviation $\sigma$.
     \item \textbf{Polynomial Detrending}
-    \[
+    \begin{align}
         \Phi_{\mathrm{trend}} = p(\Phi)
-    \]
+    \end{align}
     Where $p(\Phi)$ is a polynomial approximation of $\Phi$, usually low-order.
 \end{enumerate}
 
@@ -186,10 +186,6 @@ If a CLS token is used for classification, no other modifications are needed (si
 \end{figure}
 
 \FloatBarrier
-
-\subsubsection{Handling Masks in Patch Embeddings}
-
-When utilizing patch embeddings, additional measures must be taken to correctly apply the mask.
 
 \subsection{Segmentation}
 
@@ -213,9 +209,9 @@ After several experiments, we decided to use the following 4 temporal resolution
 The views were then obtained by selecting an appropriate window from the light curve and mean-binning it to a specified fixed length that was same for all of the views.
 For example, the 128-minute resolution view of size $256$ would be obtained by selecting a window of size
 
-\[
+\begin{align}
     \frac{128 \, \mathrm{(resolution)}}{2 \, \mathrm{(default \, resolution)}} \cdot 256 \, \mathrm{(view \, size)} = \num{16384}
-\]
+\end{align}
 
 then, mean-binning\footnote{The points are split into $n$ equally spaced, fixed-size bins ($n$ = 256, bin\_size = 64 in this case). A new sequence of length $n$ is then constructed where values at each position is the mean of all points in the corresponding bin.} the points in the window to length $256$ (size of $1$ bin would be $64$).
 

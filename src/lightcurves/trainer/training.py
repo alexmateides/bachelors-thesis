@@ -35,7 +35,6 @@ class TICBalancedLossTrainer(Trainer):
         """
         Initialize the trainer with configuration and class weights
         """
-
         super().__init__(*args, **kwargs)
         self.cfg = cfg
         self.class_weights = class_weights
@@ -82,7 +81,6 @@ class TICBalancedLossTrainer(Trainer):
         """
         Use AdamW and cosine annealing for the optimization schedule
         """
-
         self.optimizer = AdamW(self.model.parameters(), lr=self.args.learning_rate, weight_decay=self.args.weight_decay)
         self.lr_scheduler = CosineAnnealingLR(self.optimizer, T_max=int(num_training_steps), eta_min=1e-6)
 

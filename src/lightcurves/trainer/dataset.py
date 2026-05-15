@@ -281,8 +281,9 @@ def compute_tic_level_class_weights(
 
 def warn_if_split_missing_classes(split_name: str, labels_str: List[str], label2id: Dict[str, int],
                                   n_classes: int) -> None:
-    """Print a warning if a split does not contain all classes."""
-
+    """
+    Print a warning if a split does not contain all classes.
+    """
     y_split = np.array([label2id[x] for x in labels_str], dtype=np.int64)
     missing = sorted(set(range(n_classes)) - set(np.unique(y_split)))
     if missing:
@@ -292,8 +293,9 @@ def warn_if_split_missing_classes(split_name: str, labels_str: List[str], label2
 
 
 def load_record_from_npz(cfg: ExperimentConfig, fp: Union[str, Path], label2id: Dict[str, int]) -> Dict[str, Any]:
-    """Load one NPZ file into a Python record ready for tensor conversion."""
-
+    """
+    Load one NPZ file into a Python record ready for tensor conversion.
+    """
     fp = Path(fp)
     with np.load(fp, allow_pickle=True) as npz:
         label = read_label_from_npz(npz)
@@ -343,8 +345,9 @@ def load_record_from_npz(cfg: ExperimentConfig, fp: Union[str, Path], label2id: 
 def load_records_in_memory(
         cfg: ExperimentConfig, file_paths: List[Path], label2id: Dict[str, int]
 ) -> List[Dict[str, Any]]:
-    """Load all selected NPZ files into RAM for faster repeated access."""
-
+    """
+    Load all selected NPZ files into RAM for faster repeated access.
+    """
     records = []
     for i, fp in enumerate(file_paths, start=1):
         records.append(load_record_from_npz(cfg, fp, label2id))
@@ -355,7 +358,9 @@ def load_records_in_memory(
 
 
 class LightCurveNPZDataset(Dataset):
-    """Torch dataset that lazily or eagerly loads light-curve NPZ records."""
+    """
+    PyTorch dataset that lazily or eagerly loads light-curve NPZ records.
+    """
 
     def __init__(
             self,
@@ -364,7 +369,9 @@ class LightCurveNPZDataset(Dataset):
             label2id: Dict[str, int],
             load_in_memory: Optional[bool] = True,
     ):
-        """Create a dataset from a list of NPZ files and a label mapping."""
+        """
+        Create a dataset from a list of NPZ files and a label mapping.
+        """
 
         self.cfg = cfg
         self.file_paths = list(file_paths)
@@ -376,18 +383,24 @@ class LightCurveNPZDataset(Dataset):
             self.records = load_records_in_memory(self.cfg, self.file_paths, self.label2id)
 
     def __len__(self):
-        """Return the number of segment files in the dataset."""
+        """
+        Return the number of segment files in the dataset.
+        """
 
         return len(self.file_paths)
 
     @staticmethod
     def _tensor_1d(x, dtype=torch.float32):
-        """Convert an array-like object into a one-dimensional tensor."""
+        """
+        Convert an array-like object into a one-dimensional tensor.
+        """
 
         return torch.tensor(np.asarray(x).reshape(-1), dtype=dtype)
 
     def _item_from_record(self, record: Dict[str, Any]) -> Dict[str, torch.Tensor]:
-        """Convert a loaded record into the tensor dictionary used by training."""
+        """
+        Convert a loaded record into the tensor dictionary used by training.
+        """
 
         item: Dict[str, torch.Tensor] = {}
         for branch in self.flux_branches:
@@ -415,7 +428,9 @@ class LightCurveNPZDataset(Dataset):
         return item
 
     def __getitem__(self, idx):
-        """Load one sample, either from memory or directly from disk."""
+        """
+        Load one sample, either from memory or directly from disk.
+        """
 
         records = self.records
         if records is not None:
@@ -425,10 +440,14 @@ class LightCurveNPZDataset(Dataset):
 
 
 class LightCurveCollator:
-    """Pad and normalize a list of dataset items into one batch."""
+    """
+    Pad and normalize a list of dataset items into one batch.
+    """
 
     def __init__(self, cfg: ExperimentConfig):
-        """Store the configuration that controls batch preprocessing."""
+        """
+        Store the configuration that controls batch preprocessing.
+        """
 
         self.cfg = cfg
 
@@ -487,18 +506,20 @@ class LightCurveCollator:
         return torch.where(mask, x_norm, torch.zeros_like(x_norm))
 
     def normalize_flux_err_tensor(self, flux_err: torch.Tensor, mask: torch.Tensor) -> torch.Tensor:
-        """Apply optional log scaling and masked standardization to flux errors."""
+        """
+        Apply optional log scaling and masked standardization to flux errors.
+        """
 
         flux_err = torch.nan_to_num(flux_err, nan=0.0, posinf=0.0, neginf=0.0)
 
         # zero out invalid positions before transformation
         flux_err = torch.where(mask, flux_err, torch.zeros_like(flux_err))
 
-        # optional: compress the scale with log(1 + x) to handle outliers better
+        # compress the scale with log(1 + x) to handle outliers better
         if self.cfg.LOG1P_FLUX_ERR:
             flux_err = torch.log1p(torch.clamp(flux_err, min=0.0))
 
-        # optional: standardize using valid positions only
+        # standardize using valid positions only
         if self.cfg.NORMALIZE_FLUX_ERR:
             flux_err = self.masked_standardize_1d(flux_err, mask)
 
@@ -507,10 +528,13 @@ class LightCurveCollator:
 
     @staticmethod
     def normalize_extra_features(extra_features: torch.Tensor) -> torch.Tensor:
-        """Normalize the handcrafted feature vector into a more stable scale.
+        """
+        Normalize the handcrafted feature vector into a more stable scale.
 
         The first element is the amplitude; the next 10 values are periods; the
-        final 10 are power estimates. We log-scale the amplitude, normalize the
+        final 10 are power estimates.
+
+        We log-scale the amplitude, normalize the
         periods relative to the strongest period, and rescale powers by the per-
         sample maximum so the model sees comparable magnitudes.
         """
@@ -550,7 +574,9 @@ class LightCurveCollator:
         return torch.cat(features, dim=-1)
 
     def __call__(self, features):
-        """Collate a batch and apply masking-aware normalization."""
+        """
+        Collate a batch and apply masking-aware normalization.
+        """
 
         # stack metadata tensors (same length per batch item)
         batch = {

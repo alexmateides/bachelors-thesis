@@ -23,7 +23,9 @@ from utils import save_json
 
 
 def compute_metrics(eval_pred: EvalPrediction) -> Dict[str, float]:
-    """Compute the standard segment-level classification metrics."""
+    """
+    Compute the standard segment-level classification metrics.
+    """
 
     logits = eval_pred.predictions
     labels = eval_pred.label_ids
@@ -38,7 +40,9 @@ def compute_metrics(eval_pred: EvalPrediction) -> Dict[str, float]:
 
 
 def softmax_numpy(logits: np.ndarray) -> np.ndarray:
-    """Compute a numerically stable softmax over the class dimension."""
+    """
+    Compute a numerically stable softmax over the class dimension.
+    """
 
     logits = np.asarray(logits, dtype=np.float64)
     logits = logits - np.max(logits, axis=1, keepdims=True)
@@ -49,7 +53,9 @@ def softmax_numpy(logits: np.ndarray) -> np.ndarray:
 @torch.no_grad()
 def predict_dataset(cfg: ExperimentConfig, model, dataset, batch_size: int, device: str, collator) -> Dict[
     str, np.ndarray]:
-    """Run model inference over a dataset and return raw prediction arrays."""
+    """
+    Run model inference over a dataset and return raw prediction arrays.
+    """
 
     loader = DataLoader(
         dataset,
@@ -84,7 +90,9 @@ def predict_dataset(cfg: ExperimentConfig, model, dataset, batch_size: int, devi
 
 
 def compute_segment_metrics(logits: np.ndarray, labels: np.ndarray) -> Dict[str, float]:
-    """Compute segment-level metrics from raw logits and integer labels."""
+    """
+    Compute segment-level metrics from raw logits and integer labels.
+    """
 
     preds = np.argmax(logits, axis=1)
     return {
@@ -99,7 +107,9 @@ def compute_segment_metrics(logits: np.ndarray, labels: np.ndarray) -> Dict[str,
 def aggregate_tic_predictions_mean_prob(
         logits: np.ndarray, labels: np.ndarray, tic_ids: np.ndarray
 ) -> Dict[str, np.ndarray]:
-    """Aggregate segment predictions to TIC-level predictions by mean probability."""
+    """
+    Aggregate segment predictions to TIC-level predictions by mean probability.
+    """
 
     probs = softmax_numpy(logits)
     tic_true, tic_pred, tic_ids_out, tic_probs_out = [], [], [], []
@@ -125,7 +135,9 @@ def aggregate_tic_predictions_mean_prob(
 def compute_tic_mean_prob_metrics(
         logits: np.ndarray, labels: np.ndarray, tic_ids: np.ndarray
 ) -> Tuple[Dict[str, float], Dict[str, np.ndarray]]:
-    """Compute TIC-level metrics and return the aggregated intermediate arrays."""
+    """
+    Compute TIC-level metrics and return the aggregated intermediate arrays.
+    """
 
     agg = aggregate_tic_predictions_mean_prob(logits=logits, labels=labels, tic_ids=tic_ids)
     y_true = agg["tic_true"]
@@ -151,7 +163,9 @@ def evaluate_dataset_segment_and_tic(
         device: str,
         collator,
 ) -> Dict[str, float]:
-    """Evaluate a split, persist artifacts, and return the summary metrics."""
+    """
+    Evaluate a split, persist artifacts, and return the summary metrics.
+    """
 
     # run the model on all samples and collect predictions
     pred = predict_dataset(
@@ -237,16 +251,10 @@ def evaluate_dataset_segment_and_tic(
 
 
 def get_tic_prediction_pairs(logits: np.ndarray, labels: np.ndarray, tic_ids: np.ndarray, id2label: Dict[int, str]) -> Dict[int, Tuple[str, str]]:
-    """Return a dictionary mapping TIC IDs to (predicted_label, true_label) pairs using mean probability aggregation.
+    """
+    Return a dictionary mapping TIC IDs to (predicted_label, true_label) pairs using mean probability aggregation.
 
-    Args:
-        logits: Model output logits
-        labels: True label IDs
-        tic_ids: TIC identifiers for aggregation
-        id2label: Mapping from label ID to human-readable label string
-
-    Returns:
-        Dictionary mapping TIC ID to tuple of (predicted_label_str, true_label_str)
+    Returns a Dictionary mapping TIC ID to tuple of (predicted_label_str, true_label_str)
     """
     agg = aggregate_tic_predictions_mean_prob(logits=logits, labels=labels, tic_ids=tic_ids)
     return {int(tic_id): (id2label[int(predicted_label)], id2label[int(true_label)]) for tic_id, predicted_label, true_label in

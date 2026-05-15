@@ -13,7 +13,7 @@ from utils import enabled_flux_branches, get_patch_size
 
 class SimpleConfig:
     """
-    Tiny HF-compatible config with to_dict()
+    HF-compatible config with to_dict()
     """
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)

@@ -1,7 +1,7 @@
 \chapter{Overview of Technologies}
 
 We provide a brief theoretical overview of the technologies used in this work and other important related methods that preceded them.
-Additionally, a summary of the relevant libraries and frameworks used for the implementation of the experiments is also provided.
+Additionally, a~summary of the relevant libraries and frameworks used for the implementation of the experiments is also provided.
 
 
 \section{Transformers}
@@ -114,7 +114,7 @@ Since this approach uses a linear projection it requires the tokens to be vector
 
 \subsubsection{Positional Embeddings}
 
-\textbf{Positional Embeddings} inject positional information into the embedding vector, allowing the transformer to distinguish token order during \textbf{Self-Attention}.
+\textbf{Positional Embeddings} inject positional information into the embedding vector, allowing the transformer to distinguish token order when applying \textbf{Self-Attention}.
 
 Two kinds of positional embeddings are commonly used
 
@@ -122,10 +122,12 @@ Two kinds of positional embeddings are commonly used
     \item \textbf{Learned positional embeddings}: a parameter matrix $P \in \mathbb{R}^{L_{\mathrm{max}} \times d_{\mathrm{model}}}$ is learned during training.
     Each row of $P$ then corresponds to a different position in a sequence limited to length $L_{\mathrm{max}}$.
     \item \textbf{Sinusoidal positional embeddings} \parencite{AttentionIsAllYouNeed}: For position $p$ and dimension $i$
-    \begin{align*}
-        PE(pos, 2i) = \mathrm{sin} \left(\frac{p}{10000^{2i / d_{\mathrm{model}}}}\right) \\
-        PE(pos, 2i + 1) = \mathrm{cos} \left(\frac{p}{10000^{2i / d_{\mathrm{model}}}}\right)
-    \end{align*}
+    {\setlength{\jot}{1em}
+    \begin{align}
+        \mathrm{PE}(pos, 2i) = \mathrm{sin} \left(\frac{p}{10000^{2i / d_{\mathrm{model}}}}\right) \\
+        \mathrm{PE}(pos, 2i + 1) = \mathrm{cos} \left(\frac{p}{10000^{2i / d_{\mathrm{model}}}}\right)
+    \end{align}
+    }
 \end{itemize}
 
 \subsection{Self-Attention Mechanism}
@@ -136,52 +138,52 @@ This is especially useful when long-range relationships in the data are importan
 
 \bigskip
 
-\noindent For a layer $l$, given weight matrices $W_Q, \, W_K, \, W_V \in \mathbb{R}^{d_{\mathrm{model}} \times (h d_{\mathrm{head}})}$ and a layer input $X_{l-1}$, the multi-head attention self-attention $H_l$ is calculated the following way
+\noindent For a layer $l$, given weight matrices $W_Q, \, W_K, \, W_V \in \mathbb{R}^{d_{\mathrm{model}} \times (h d_{\mathrm{head}})}$ and a~layer input $X_{l-1}$, the multi-head attention self-attention $H_l$ is calculated the following way
 
         {\setlength{\jot}{1em}
 \begin{enumerate}
     \item \textbf{Compute $Q$ (queries), $K$ (keys), $V$ (values)} for each head $i \in \{1, 2, \dots, h\}$
-    \[
+    \begin{align}
         Q_i = X_{l-1}W^{(i)}_Q,
         \qquad
         K_i = X_{l-1}W^{(i)}_K,
         \qquad
         V_i = X_{l-1}W^{(i)}_V,
-    \]
+    \end{align}
     $W_Q^{(i)}, \, W_K^{(i)}, \, W_V^{(i)} \in \mathbb{R}^{d_{\mathrm{model}} \times d_{\mathrm{head}}}$ are the weight matrices for the head $i$ and $Q_i, \, K_i, \, V_i \in \mathbb{R}^{n \times d_{\mathrm{head}}}$.
     \item \textbf{Compute attention scores $S_i$ for each head $i$}
-    \[
+    \begin{align}
         S_i = \frac{Q_{i}K_{i}^{\top}}{\sqrt{d_{\mathrm{head}}}},
         \qquad S_i \in \mathbb{R}^{n \times n},
-    \]
+    \end{align}
     Each entry of $S_i$ then measures how strongly a token attends to another.
     \item \textbf{Apply row-wise softmax} to obtain \textbf{Attention weights}
-    \[
+    \begin{align}
         A_i = \mathrm{softmax}(S_i),
         \qquad
         A_i \in \mathbb{R}^{n \times n}.
-    \]
+    \end{align}
     Each row of $A_i$ then sums to 1.
     \item \textbf{Compute weighted sum of the value vectors}
-    \[
+    \begin{align}
         Z_i = A_i V_i,
         \qquad
         Z_i \in \mathbb{R}^{n \times d_{\mathrm{head}}},
-    \]
+    \end{align}
     This gives a context-aware representation based on all tokens in the sequence.
     \item \textbf{Concatenate the weighted sums} $Z_i$ of all $h$ heads
-    \[
+    \begin{align}
         Z = \mathrm{Concatenate}(Z_1, Z_2, \dots, Z_h),
         \qquad
         Z \in \mathbb{R}^{n \times (h d_{\mathrm{head}})},
-    \]
+    \end{align}
     In most implementations $h d_{\mathrm{head}} = d_{\mathrm{model}}$.
     \item \textbf{Project back to model dimension} (output projection)
-    \[
+    \begin{align}
         H_l = ZW_O,
         \qquad
         H_l \in \mathbb{R}^{n \times d_{\mathrm{model}}},
-    \]
+    \end{align}
     $W_O \in \mathbb{R}^{(h d_{\mathrm{head}}) \times d_{\mathrm{model}}}$ is the output projection weight matrix.
 
 \end{enumerate}
@@ -198,9 +200,9 @@ It has been shown that the mixing of feature information in FFN translates to th
 
 \noindent After $\textbf{Attention}$ and $\textbf{LayerNorm}$ a vector $u \in \mathbb{R}^{d_{\mathrm{model}}}$ is obtained.
 
-\[
+\begin{align}
     F = \mathrm{FFN}_{\phi}(u) = W_2 \phi(W_1 u + b_1) + b_2,
-\]
+\end{align}
 
 \smallskip
 
@@ -215,14 +217,14 @@ They allow richer feature interactions than traditional FFNs by enabling multipl
 
 \noindent For a feature vector $u \in \mathbb{R}^{d_{\mathrm{model}}}$ a Gated FFN with activation function $\phi$ looks like
 
-\[
+\begin{align}
     \mathrm{GLU}_{\phi}(u) = (W_v u + b_v) \odot \phi(W_g u + b_g)
-\]
+\end{align}
 
 
-\[
-    \mathrm{GATED\_FFN}_{\phi}(u) = W_o GLU_{\phi}(u) + b_o
-\]
+\begin{align}
+    \mathrm{GATED\_FFN}_{\phi}(u) = W_o \mathrm{GLU}_{\phi}(u) + b_o
+\end{align}
 
 \smallskip
 
@@ -251,9 +253,9 @@ This has led to the development of more efficient fine-tuning methods that utili
 
 Update of a weight matrix $W \in \mathbb{R}^{p \times q}$ during full fine-tuning can be expressed as
 
-\[
+\begin{align}
     W' = W + \alpha \Delta W,
-\]
+\end{align}
 
 $\alpha \in \mathbb{R}$ is a scaling factor and $\Delta W$ is the update matrix that is learned during fine-tuning.
 

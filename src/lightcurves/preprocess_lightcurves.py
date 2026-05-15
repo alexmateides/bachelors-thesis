@@ -10,7 +10,7 @@ import pandas as pd
 
 INDEX_CSV = "../../data/provided/index_binary.csv"
 LIGHTCURVE_DIR = "../../data/provided"
-OUTPUT_DIR = "../data/processed_4_channel_binary_256_test"
+OUTPUT_DIR = "../../data/processed_4_channel_binary_256_test"
 
 ID_COLUMN = "id"
 LABEL_COLUMN = "label"
