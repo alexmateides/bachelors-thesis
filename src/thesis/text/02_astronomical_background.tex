@@ -4,7 +4,7 @@ Light curves describe how the brightness of an astronomical object varies over t
 These brightness variations are caused by different astrophysical phenomena, such as pulsations, rotation, and eclipses.
 
 Since the underlying causes of variability are most often related to changes in physical properties of a star, understanding of these processes is crucial for interpretation, preprocessing and classification of light curves.
-We therefore provide a brief introduction to the relevant astronomical and astrophysical terms, concepts and processes, more detailed general overview can be found in~\cite{Guidry2019}.
+We therefore provide a brief introduction to the relevant astronomical and astrophysical terms, concepts and processes, more detailed general overview can be found in~\textcite{Guidry2019}.
 
 \section{Stars}
 
@@ -29,7 +29,7 @@ Stars are primarily classified based on their spectral characteristic and by ext
 \subsubsection{Harvard Classification System}
 
 The \textbf{Harvard Classification System} \parencite{Cannon1918} categorizes stars based on spectral characteristics, assigning a letter to each class.
-These classes are then subdivided by Arabic numerals $0-9$ for finer classification.
+These classes are then subdivided by Arabic numerals 0--9 for finer classification.
 
 \begin{table}[H]
     \centering
@@ -41,12 +41,12 @@ These classes are then subdivided by Arabic numerals $0-9$ for finer classificat
         \textbf{Class} & \textbf{Temperature (K)} & \textbf{Apparent color} & \textbf{\% of main sequence stars} \tabularnewline
         \midrule
         \textbf{O} & $\geq \num{33000}$              & blue            & 0.00003 \tabularnewline
-        \textbf{B} & $\num{10000} - \num{33000}$     & bluish white    & \num{0.12}    \tabularnewline
-        \textbf{A} & $\num{7300} - \num{10000}$      & white           & \num{0.61}    \tabularnewline
-        \textbf{F} & $\num{6000} - \num{7300}$       & yellowish white & \num{3.00}    \tabularnewline
-        \textbf{G} & $\num{5300} - \num{6000}$       & yellow          & \num{7.60}     \tabularnewline
-        \textbf{K} & $\num{3900} - \num{5300}$       & orange          & \num{12.00}   \tabularnewline
-        \textbf{M} & $\num{2300} - \num{3900}$       & red             & \num{76.00}   \tabularnewline
+        \textbf{B} & 10 000--33 000     & bluish white    & \num{0.12}    \tabularnewline
+        \textbf{A} & 7300--10000      & white           & \num{0.61}    \tabularnewline
+        \textbf{F} & 6000--7300       & yellowish white & \num{3.00}    \tabularnewline
+        \textbf{G} & 5300--6000       & yellow          & \num{7.60}     \tabularnewline
+        \textbf{K} & 3900--5300       & orange          & \num{12.00}   \tabularnewline
+        \textbf{M} & 2300--3900       & red             & \num{76.00}   \tabularnewline
         \bottomrule
     \end{tabularx}
 
@@ -60,7 +60,7 @@ he Sun is classified as a \textbf{G2} star in the Harvard classification system.
 
 \subsubsection{Morgan--Keenan System}
 
-\textbf{Morgan–-Keenan} (MK) classification \parencite{Morgan1973} system extends the Harvard system by introducing luminosity classes.
+\textbf{Morgan--Keenan} (MK) classification \parencite{Morgan1973} system extends the Harvard system by introducing luminosity classes.
 
 \begin{table}[H]
     \centering
@@ -93,15 +93,15 @@ he Sun is classified as a \textbf{G2} star in the Harvard classification system.
 
 \noindent Since the Sun is a main-sequence star, its luminosity class is \textbf{V}; therefore its designation in the MK system is \textbf{G2V}.
 
-\subsection{Hertzsprung-Rusel Diagram}
+\subsection{Hertzsprung--Rusel Diagram}
 
-\textbf{Hertzsprung-Russel Digram} (HR diagram) is a two-dimensional plot showing the relationship between stellar luminosities and effective temperatures.
+\textbf{Hertzsprung--Russel Digram} (HR diagram) is a two-dimensional plot showing the relationship between stellar luminosities and effective temperatures.
 It is often used to either describe stellar distribution of some region (i.e.~a stellar cluster) or to illustrate a star's evolution in time.
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\linewidth]{images/02_hr_diagram}
-    \caption[Hertzsprung–Russell diagram]{Hertzsprung–Rusell diagram with 22,000 stars plotted from the Hipparcos Catalogue and 1,000 from the Gliese Catalogue of nearby stars. It shows stars of different masses in different stages of their lifecycles. \parencite{hr_diagram}}
+    \caption[Hertzsprung--Russell diagram]{Hertzsprung--Rusell diagram with 22,000 stars plotted from the Hipparcos Catalogue and 1,000 from the Gliese Catalogue of nearby stars. It shows stars of different masses in different stages of their lifecycles. \parencite{hr_diagram}}
     \label{fig:02_hr_diagram}
 \end{figure}
 
@@ -135,7 +135,7 @@ In comparison, the duration of main sequence for massive stars is in the order o
 
 \subsubsection{Low-mass Stars}
 
-\textbf{Low-mass Stars} with masses $\lesssim 0.5 M_{\odot}$ are generally massive enough to start helium fusion.
+\textbf{Low-mass Stars} with masses $\lesssim 0.5 \, M_{\odot}$ are generally massive enough to start helium fusion.
 
 These stars evolve very slowly, therefore their post-main sequence hasn't been observed yet.
 Since less massive of these stars are small enough for their entirety to be a convection zone, an electron-degenerate\footnote{Quantum-mechanical phenomenon that occurs when the gas particles are packed so tightly (due to gravity) that the electrons are forced to occupy all available quantum states, exerting pressure. This allows the helium core to accumulate heat without expanding and cooling down like a normal gas.} helium core cannot form and the star will continue to burn hydrogen until it turns almost all of it into helium.
@@ -145,7 +145,7 @@ Stars at the upper end of this mass range may become red giants, but their cores
 
 \subsubsection{Intermediate-mass Stars}
 
-\textbf{Intermediate-sized Stars}, with masses of roughly $0.5 - 8 M_{\odot}$, are massive enough to eventually start helium fusion but generally not massive enough to sustain advanced fusion of heavier elements. \parencite{Aguirre2017}
+\textbf{Intermediate-sized Stars}, with masses of roughly $0.5 - 8 ,\ M_{\odot}$, are massive enough to eventually start helium fusion but generally not massive enough to sustain advanced fusion of heavier elements. \parencite{Aguirre2017}
 
 \begin{figure}[!htbp]
     \centering
@@ -165,7 +165,7 @@ Stars at the upper end of this mass range may become red giants, but their cores
     Although the surface is relatively cold, red giants are highly luminous due to their size. \parencite{Aguirre2017}
 
     \item\label{item:02-horiozntal-branch}\textbf{Horizontal Branch.} Eventually, the core heats up enough to start helium fusion.
-    In less massive stars ($m \lesssim 2.3 M_{\odot}$) core degeneration allows the accumulation of thermal energy in the core, which leads to the rapid start of helium fusion in an event known as the helium flash.
+    In less massive stars ($m \lesssim 2.3 \, M_{\odot}$) core degeneration allows the accumulation of thermal energy in the core, which leads to the rapid start of helium fusion in an event known as the helium flash.
 
     More massive stars with non-degenerate cores are able to start the helium fusion more smoothly and due to their larger mass, they become even hotter in this stage, performing a so-called blue loop. \parencite{Renzini1981}
 
@@ -199,7 +199,7 @@ Stars at the upper end of this mass range may become red giants, but their cores
 
 \subsubsection{Massive Stars}
 
-\textbf{Massive Stars}  with masses $\gtrsim 8 M_{\odot}$ can reach high enough temperatures to start the fusion of carbon and subsequently heavier elements like neon, oxygen and silicon in their giant phase.
+\textbf{Massive Stars}  with masses $\gtrsim 8 \, M_{\odot}$ can reach high enough temperatures to start the fusion of carbon and subsequently heavier elements like neon, oxygen and silicon in their giant phase.
 
 The stages of fusion get exponentially shorter with the last stage where silicon fuses into iron-group\footnote{Iron, Cobalt and Nickel} elements lasting mere days.
 Since iron-group nuclei lie around the peak of nuclear binding energy, their fusion no longer releases any energy.
@@ -326,7 +326,7 @@ Their light curves are therefore characterized by relatively sharp and well-defi
 \textbf{Beta Lyrae-type (EB)} variables, also referred to as semi-detached binaries, are binary stars that orbit so close together that their shapes becomes distorted.
 Material flow from one star to another is usually present, because one of the stars fills its Roche lobe\footnote{Region around a star within which the material is gravitationally bound to that star.}.
 
-The variation period is very regular, lasting $1-10$ days in most cases.
+The variation period is very regular, lasting 1--10 days in most cases.
 Because of the distorted stellar shapes and ongoing mass transfer, the variation is more continuous and the eclipses are not as sharply defines as in EA systems. \parencite{Kopal1946}
 
 \begin{figure}[!htbp]
@@ -375,14 +375,14 @@ Additionally, they're divided into two main subclasses:
 
 \begin{itemize}
     \item \textbf{Classical Cepheids.} Younger stars with very regular periods in the order of days to months.
-    They are yellow bright giants and supergiants of classes F6-K2 with masses of $3 - 10 M_{\odot}$.
-    \item \textbf{Type II Cepheids.} Older stars with shorter periods (order of days), they are usually fainter and have lower mass ($0.5 - 0.6 M_{\odot}$).
+    They are yellow bright giants and supergiants of classes F6-K2 with masses of $3 - 10 \, M_{\odot}$.
+    \item \textbf{Type II Cepheids.} Older stars with shorter periods (order of days), they are usually fainter and have lower mass ($0.5 - 0.6 \, M_{\odot}$).
 \end{itemize}
 
 \subsubsection{Delta Scuti (DSCT)}\label{subsubsec:02-dsct}
 
 \textbf{Delta Scuti (DSCT)} variables are a type of pulsators similar to cepheids.
-They are smaller main-sequence (or near main-sequence) stars of spectral classes A-F and are therefore considerably dimmer than cepheids, their range of magnitude also being lower.
+They are smaller main-sequence (or near main-sequence) stars of spectral classes A--F and are therefore considerably dimmer than cepheids, their range of magnitude also being lower.
 
 Delta Scuti stars often show both radial and non-radial pulsations and their periods are shorter, ranging from minutes to several hours.
 Furthermore, Delta Scuti variables often pulsate in multiple frequencies, making their light curves more complex. \parencite{Guzik2021}
@@ -417,7 +417,7 @@ Their range of magnitude is also typically lower. \parencite{Pollard2009}
 
 \subsubsection{RR Lyrae (RRAB / RRC)}
 
-\textbf{RR Lyrae (RRAB / RRC)} variables are old stars on the horizontal branch of spectral classes A-F with masses around $0.5 M_{\odot}$.
+\textbf{RR Lyrae (RRAB / RRC)} variables are old stars on the horizontal branch of spectral classes A-F with masses around $0.5 \, M_{\odot}$.
 They have similar range of magnitude and period duration to Cepheids, but are typically less stable and dimmer. \parencite{Marconi2009}
 
 \begin{figure}[!htbp]

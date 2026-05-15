@@ -1,0 +1,18 @@
+{
+  "EXPERIMENT_NAME": "example_experiment01",
+  "DATA_DIR": "../../../data/lightcurves/processed_4_channel_multi_256",
+  "OUTPUT_DIR": "../example_experiment/results",
+  "ARCHITECTURE": "v1.4_final",
+  "BRANCH_ENCODER_TYPE": "transformer",
+  "ALLOWED_CLASSES": [
+    "pulsating",
+    "eclipsing",
+    "rotating"
+  ],
+  "USE_BRANCH_2MIN": false,
+  "USE_BRANCH_8MIN": false,
+  "USE_BRANCH_32MIN": false,
+  "USE_BRANCH_128MIN": false,
+  "USE_PHASE_BRANCH": false,
+  "USE_EXTRA_FEATURES_BRANCH": false
+}

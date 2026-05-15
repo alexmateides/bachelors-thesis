@@ -2,8 +2,6 @@
 
 > Bachelor's thesis of Alexander Mateides (2026)
 
-
-
 ---
 
 ### Acknowledgment

@@ -1,0 +1,23 @@
+{
+  "val": {
+    "segment_accuracy": 0.891875,
+    "segment_f1_macro": 0.8819031103981613,
+    "segment_f1_weighted": 0.8926822649497437,
+    "segment_precision_macro": 0.8635519109654896,
+    "segment_recall_macro": 0.9045042683993444,
+    "tic_meanprob_accuracy": 0.9185185185185185,
+    "tic_meanprob_f1_macro": 0.9232319938856254,
+    "tic_meanprob_f1_weighted": 0.9199074195808405,
+    "tic_meanprob_precision_macro": 0.9264069264069265,
+    "tic_meanprob_recall_macro": 0.9233301677746123,
+    "tic_count": 135
+  },
+  "timing": {
+    "status": "completed",
+    "start_time_local": "2026-05-15 18:46:04",
+    "end_time_local": "2026-05-15 19:07:14",
+    "duration_seconds": 1269.4523777520008,
+    "duration_minutes": 21.157539629200013,
+    "duration_hours": 0.3526256604866669
+  }
+}
