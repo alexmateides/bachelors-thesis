@@ -10,7 +10,7 @@
   ],
   "USE_BRANCH_2MIN": false,
   "USE_BRANCH_8MIN": false,
-  "USE_BRANCH_32MIN": false,
+  "USE_BRANCH_32MIN": true,
   "USE_BRANCH_128MIN": false,
   "USE_PHASE_BRANCH": false,
   "USE_EXTRA_FEATURES_BRANCH": false

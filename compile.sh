@@ -6,4 +6,4 @@ mkdir -p .aux/text
 latexmk -auxdir=.aux -pdflatex=lualatex -pdf ctufit-thesis.tex
 mv ./ctufit-thesis.pdf ../../text/thesis.pdf
 # clean artifacts for full compilation
-#rm -rf .aux
+rm -rf .aux

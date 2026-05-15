@@ -117,7 +117,7 @@ The following `BRANCH_ENCODER_TYPE` values are supported:
 
 ### Running Experiments
 
-0. Install required dependencies
+**0. Install required dependencies**
 
 > dependencies are in `src/requirements.txt`
 
@@ -125,13 +125,13 @@ The following `BRANCH_ENCODER_TYPE` values are supported:
 pip install -Ur src/requirements.txt
 ```
 
-1. Go into the `trainer` directory
+**1. Go into the `trainer` directory**
 
 ```shell
 cd src/lightcurves/trainer
 ```
 
-2. Run the driver script with a parameter specifying a directory that contains the experiment configs
+**2. Run the driver script with a parameter specifying a directory that contains the experiment configs**
 
 ```shell
 python driver.py --config-dir ../example_experiment/
