@@ -1,0 +1,62 @@
+# .github/workflows/build-and-deploy.yml
+name: Build & Deploy thesis + Site
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: write
+
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. Set up git repository
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Create output dir
+        run: mkdir -p output
+
+      # 2. Compile LaTeX PDF
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ctufit-thesis.tex
+          working_directory: src/thesis
+          latexmk_use_lualatex: true
+          args: -interaction=nonstopmode -halt-on-error
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: thesis/ctufit-thesis.pdf
+
+      # 3. Copy HTML redirect and thesis.pdf into the output dir
+      - name: Copy index.html
+        run: |
+          if [ -f index.html ]; then
+            cp index.html output/index.html
+          else
+            echo "Warning: index.html not found in repo root"
+          fi
+
+      - name: Copy thesis.pdf
+        run: |
+          if [ -f src/thesis/ctufit-thesis.pdf ]; then
+            cp src/thesis/ctufit-thesis.pdf output/thesis.pdf
+          else
+            echo "Warning: src/thesis/ctufit-thesis.pdf not found"
+          fi
+
+      # 4. Add your custom domain (CNAME)
+      - name: Create CNAME
+        run: echo "bachelors-thesis.mateides.com" > output/CNAME
+
+      # 5. Deploy everything in output/ (thesis.pdf, index.html, CNAME) to gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: output
+          publish_branch: gh-pages
