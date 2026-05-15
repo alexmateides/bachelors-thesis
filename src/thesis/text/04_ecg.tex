@@ -36,7 +36,7 @@ Like many other authors \parencite{Hu2022,ECG-CNN,ECGformer} we also mapped the 
         \bottomrule
     \end{tabularx}
 
-    \caption[MIT-BIH Class distribution]{Class distribution}
+    \caption[MIT-BIH Class distribution]{Class distribution.}
     \label{tab:04_classes}
 \end{table}
 
@@ -53,7 +53,7 @@ In this context, maximizing recall is often preferred over accuracy as errors in
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/04_examples}
-    \caption[MIT-BIH Examples]{MIT-BIH examples for each class}
+    \caption[MIT-BIH Examples]{MIT-BIH examples for each class.}
     \label{fig:04_examples}
 \end{figure}
 
@@ -100,7 +100,7 @@ Since the experiments will be focused on multi-class classification, It is neces
         \bottomrule
     \end{tabularx}
 
-    \caption[TP, FP, TN, FN definition]{TP, FP, TN, FN definition}
+    \caption[TP, FP, TN, FN definition]{TP, FP, TN, FN definition.}
     \label{tab:04_tp_fp_tn_fn}
 \end{table}
 
@@ -216,7 +216,7 @@ The following model configuration was used:
         \bottomrule
     \end{tabularx}
 
-    \caption[Base Transformer Configuration]{Base Transformer Configuration}
+    \caption[Base Transformer Configuration]{Base Transformer Configuration.}
     \label{tab:04_base_transformer_configuration}
 \end{table}
 
@@ -245,13 +245,13 @@ The training took around 5 minutes, the following parameters were used:
         \bottomrule
     \end{tabularx}
 
-    \caption[Base Transformer Training Parameters]{Training Parameters}
+    \caption[Base Transformer Training Parameters]{Training Parameters.}
     \label{tab:04_base_transformer_training}
 \end{table}
 
 \FloatBarrier
 
-Previous work by \parencite{Hu2022, ECGformer} was used as the basis for the used hyperparameters.
+Previous work by \textcite{Hu2022, ECGformer} was used as the basis for the used hyperparameters.
 
 Training loss continued to decrease over the training, the training and validation loss diverged at around epoch $20$ and validation loss started increasing at around epoch $40$.
 Validation Macro F1 reached the best value at epoch $53$ and stagnated afterward.
@@ -259,7 +259,7 @@ Validation Macro F1 reached the best value at epoch $53$ and stagnated afterward
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.9\linewidth]{images/04/base_transformer_training_curves}
-    \caption[Base Transformer Training Curves]{Training Curves}
+    \caption[Base Transformer Training Curves]{Training Curves.}
     \label{fig:04_base_transformer_training_curves}
 \end{figure}
 
@@ -304,7 +304,7 @@ Checkpoint at epoch $53$ was chosen for detailed evaluation on the \textbf{val} 
         \end{tabularx}
     \end{minipage}
 
-    \caption[Base Transformer Evaluation Metrics]{Evaluation Metrics}
+    \caption[Base Transformer Evaluation Metrics]{Evaluation Metrics.}
     \label{tab:04_base_transformer_evaluation_metrics}
 \end{table}
 
@@ -313,7 +313,7 @@ Checkpoint at epoch $53$ was chosen for detailed evaluation on the \textbf{val} 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.6\linewidth]{images/04/base_transformer_confusion_matrix}
-    \caption[Base Transformer Confusion Matrix]{Confusion Matrix}
+    \caption[Base Transformer Confusion Matrix]{Confusion Matrix.}
     \label{fig:04_base_transformer_confusion_matrix}
 \end{figure}
 
@@ -324,7 +324,7 @@ Additionally, we can see that the model achieved per-class performance at rate p
 
 \subsection{Qwen2.5 0.5B fine-tune}
 
-For the next experiment we've performed a LoRA fine-tune of pretrained a Qwen2.5 0.5B\footnote{https://huggingface.co/Qwen/Qwen2.5-0.5B} LLM\@.
+For the next experiment we've performed a LoRA fine-tune of pretrained a Qwen2.5 0.5B\footnote{https://huggingface.co/Qwen/Qwen2.5-0.5B} \parencite{qwen2025} LLM\@.
 The size of 0.5B (500 million parameters) made it small enough to effectively fine-tune on available hardware (AMD Radeon RX 9070 GPU).
 
 \subsubsection{Architecture}
@@ -349,7 +349,7 @@ A learnable CLS token with the classification layer was also implemented, result
         \bottomrule
     \end{tabularx}
 
-    \caption[Qwen 2.5 0.5B Configuration]{Configuration}
+    \caption[Qwen 2.5 0.5B Configuration]{Configuration.}
     \label{tab:04_qwen2.5_0.5b_configuration}
 \end{table}
 
@@ -380,7 +380,7 @@ The training took around 90 minutes, the following parameters were used:
         \bottomrule
     \end{tabularx}
 
-    \caption[Qwen 2.5 0.5B Training Parameters]{Training Parameters}
+    \caption[Qwen 2.5 0.5B Training Parameters]{Training Parameters.}
     \label{tab:04_qwen_2.5_0.5b_training}
 \end{table}
 
@@ -391,7 +391,7 @@ The model started converging much faster than in the first experiment, achieving
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.9\linewidth]{images/04/llm_training_curves}
-    \caption[Qwen 2.5 0.5B Training Metrics]{Training Metrics}
+    \caption[Qwen 2.5 0.5B Training Metrics]{Training Metrics.}
     \label{fig:04_qwen_2.5_0.5b_training_metric}
 \end{figure}
 
@@ -435,7 +435,7 @@ Checkpoint at epoch $7$ was chosen for further evaluation on val dataset as the 
         \end{tabularx}
     \end{minipage}
 
-    \caption[Qwen 2.5 0.5B Evaluation Metrics]{Evaluation Metrics}
+    \caption[Qwen 2.5 0.5B Evaluation Metrics]{Evaluation Metrics.}
     \label{tab:04_qwen_2.5_0.5b_evaluation_metrics}
 \end{table}
 
@@ -444,7 +444,7 @@ Checkpoint at epoch $7$ was chosen for further evaluation on val dataset as the 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.6\linewidth]{images/04_qwen_2.5_0.5b_confusion_matrix}
-    \caption[Qwen 2.5 0.5B Confusion Matrix]{Confusion Matrix}
+    \caption[Qwen 2.5 0.5B Confusion Matrix]{Confusion Matrix.}
     \label{fig:04_qwen_2.5_0.5b_confusion_matrix}
 \end{figure}
 
@@ -489,7 +489,7 @@ The first base transformer outperformed the second LLM fine-tune model and its c
         \end{tabularx}
     \end{minipage}
 
-    \caption[Final Model Evaluation Metrics]{Final Model Evaluation Metrics}
+    \caption[Final Model Evaluation Metrics]{Final Model Evaluation Metrics.}
     \label{tab:04_final_model_evaluation_metrics}
 \end{table}
 
@@ -498,7 +498,7 @@ The first base transformer outperformed the second LLM fine-tune model and its c
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.6\linewidth]{images/04/test_confusion_matrix}
-    \caption[Final Model Confusion Matrix]{Final Model Confusion Matrix}
+    \caption[Final Model Confusion Matrix]{Final Model Confusion Matrix.}
     \label{fig:final_model_confusion_matrix}
 \end{figure}
 

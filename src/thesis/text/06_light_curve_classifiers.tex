@@ -115,11 +115,15 @@ TIC-level classification would also be applied in real-world labeling of unknown
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.8\linewidth]{images/06/segment_vs_tic_classification}
-    \caption[Segment vs. TIC classification]{Comparison of segment-level and TIC-level classification - while one of the segments would individually misclassify the star, the final TIC-level prediction is correct. Note that the TIC-level prediction isn't done by majority voting, but rather by averaging logits.}
+    \caption[Segment vs. TIC classification]{
+        Example of segment-level and TIC-level classification -- the model predicts labels of 3 segments of an eclipsing variable.
+        One of the segments is misclassified as non-variable because the secondary eclipse isn't clear enough, however the other two segments are predicted correctly.
+        After aggregation, the final predicted label for the whole object is correct, improving the overall classification performance.
+        Note that the TIC-level prediction isn’t done by majority voting, but rather by averaging logits}
     \label{fig:06_segment_vs_tic_classification}
 \end{figure}
 
-\subsubsection{Segment \& Class Weighted Loss}\label{subsubsec:06-turbo-loss}
+\subsubsection{Segment \& Class Weighted Loss}
 
 During training and validation, the loss was computed as a segment and class-weighted segment-level cross-entropy loss.
 For a batch of segments, the model produces logits for each segment, and cross-entropy is computed independently for each one.
@@ -127,18 +131,18 @@ Class weights were applied inside the cross-entropy term to account for class im
 To prevent TICs with many extracted segments from dominating, each segment was additionally weighted by the inverse of the number of segments belonging to its TIC.
 Therefore, for segment $i$ from TIC $t$, the segment weight is
 
-\[
+\begin{align}
     s_i = \frac{1}{n_t},
-\]
+\end{align}
 
 where $n_t$ is the number of segments associated with TIC $t$.
 The batch loss is then computed as the weighted average
 
-\[
-    \mathcal{L} = \frac{\sum_{i=1}^{B} s_i \, L_{\mathrm{WCE}}^{(i)}}{\sum_{i=1}^{B} s_i},
-\]
+\begin{align}
+    \mathcal{L} = \frac{\sum_{i=1}^{B} s_i \, L_{\mathrm{WCE}}^{(i)}}{\sum_{i=1}^{B} s_i}, \label{eq:06-turbo-loss}
+\end{align}
 
-where $B$ is the batch size and $L_{\mathrm{WCE}}^{(i)}$ is the \hyperref[eq:04-weighted-cross-entropy]{WeightedLoss} for segment $i$.
+where $B$ is the batch size and $L_{\mathrm{WCE}}^{(i)}$ is the \hyperref[eq:04-weighted-cross-entropy]{Weighted Loss (4.12)} for segment $i$.
 
 \bigskip
 
@@ -152,41 +156,41 @@ However, since we are interested in the model's performance on TIC level rather 
 
 For each validation segment $i$ belonging to TIC $t$, the model output logits
 
-\[
+\begin{align}
     \mathbf{z}_{t,i} = [z_{t,i,1}, z_{t,i,2}, \dots, z_{t,i,C}],
-\]
+\end{align}
 
 where $C$ is the number of classes.
 These logits were converted to class probabilities using the softmax function
 
-\[
+\begin{align}
     p_{t,i,c} = \frac{\exp(z_{t,i,c})}{\sum_{k=1}^{C} \exp(z_{t,i,k})}.
-\]
+\end{align}
 
 The class probabilities were then averaged over all $n_t$ segments belonging to the same TIC
 
-\[
+\begin{align}
     \bar{p}_{t,c} = \frac{1}{n_t} \sum_{i=1}^{n_t} p_{t,i,c}.
-\]
+\end{align}
 
 The predicted class for TIC $t$ was selected as the class with the highest mean probability
 
-\[
+\begin{align}
     \hat{y}_t = \arg\max_{c} \bar{p}_{t,c}.
-\]
+\end{align}
 
 Equivalently
 
-\[
+\begin{align}
     \hat{y}_t = \arg\max_c \left(\frac{1}{n_t}\sum_{i=1}^{n_t}\mathrm{softmax}(\mathbf{z}_{t,i})_c\right).
-\]
+\end{align}
 
 After aggregation, we obtained exactly one predicted label for each TIC.
 TIC-level accuracy was then computed as
 
-\[
+\begin{align}
     \mathrm{Accuracy}_{\mathrm{TIC}} = \frac{1}{T} \sum_{t=1}^{T} \mathbf{1}(\hat{y}_t = y_t),
-\]
+\end{align}
 
 where $T$ is the number of TICs in the validation set and $y_t$ is the true class label of TIC $t$.
 
@@ -265,13 +269,13 @@ Specifically, the following features are computed for each patch $j$ and input c
         $v$ & Fraction of valid points \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Patch Statical Features]{Patch Statical Features}
+    \caption[Patch Statical Features]{Patch Statical Features.}
     \label{tab:06_patch_statistical_featues}
 \end{table}
 
 The statistical features are then reshaped into vector of length $5D + 1$ (1~represents the valid point fraction), this vector is then projected into $d_{\mathrm{model}}$ using a compact 2 layer MLP.
 
-The usage of statistical patch embeddings significantly improved the model performance by approximately $0.05 - 0.1 \Delta$ Macro F1.
+The usage of statistical patch embeddings significantly improved the model performance by approximately 0.05--0.1 $\Delta$ Macro F1.
 
 
 \section{Implementation}
@@ -327,13 +331,13 @@ The framework allows configuration of the transformer architecture that is used 
         Qwen 2.5 0.5B & Pretrained LLM & Largest model at around 1GB.   \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Supported Transformer Architectures]{Supported Transformer Architectures}
+    \caption[Supported Transformer Architectures]{Supported Transformer Architectures.}
     \label{tab:06_supported_transformer_architecture}
 \end{table}
 
 \subsubsection{Chronos-2}\label{subsubsec:06-chronos}
 
-Chronos-2 is a 120M-parameter, encoder-only time series foundation model developed by Amazon.
+Chronos-2\footnote{https://huggingface.co/amazon/chronos-2} is a 120M-parameter, encoder-only time series foundation model developed by Amazon.
 While originally trained for time series forecasting, it can be fine-tuned for the classification task. \parencite{Ansari2025}
 
 
@@ -358,7 +362,7 @@ Even this simple baseline CNN performed strongly and achieved good results.
         \textbf{B} & 0.8819 & 0.9232 \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Baseline Model Validation Metrics]{Baseline Model Validation Metrics}
+    \caption[Baseline Model Validation Metrics]{Baseline Model Validation Metrics.}
     \label{tab:06_baseline_model_performance}
 \end{table}
 
@@ -396,7 +400,7 @@ The values that generally worked well for most configurations were:
         $d_{\mathrm{fusion}}$ & 256 \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Transformer Hyperparameters]{Transformer Hyperparameters}
+    \caption[Transformer Hyperparameters]{Transformer Hyperparameters.}
     \label{tab:06_transformer_hyperparameters}
 \end{table}
 
@@ -409,7 +413,7 @@ Mutliple parameters for training were also explored:
     \item \textbf{Optimizer.} AdamW was chosen because it outperformed the simpler Adam optimizer.
     \item \textbf{Batch Size.} $64$ was at the upper limit of what could fit into the GPU VRAM, it also generally achieved slightly better validation performance than lower values.
     \item \textbf{Epochs.} $50$ was identified as a baseline, since it allowed most models to converge and show signs of overfitting at the end of the training.
-    \item \textbf{Loss Function.} The proposed \hyperref[subsubsec:06-turbo-loss]{Segment \& Class Weighted Loss} was used.
+    \item \textbf{Loss Function.} The proposed \hyperref[eq:06-turbo-loss]{Segment \& Class Weighted Loss (6.2)} was used.
 \end{itemize}
 
 \subsection{LR Scheduler}
@@ -418,14 +422,14 @@ Flat learning rate and multiple LR schedulers were tried, \textbf{CosineAnnealin
 
 The cosine annealing scheduler gradually decreases the learning rate $\eta$, following a cosine curve.
 
-\[
+\begin{align}
     \eta_t = \eta_{\min} + \frac{1}{2}(\eta_{\max} - \eta_{\min})\left(1 + \cos\left(\pi \cdot \frac{t}{T_{\text{max}}}\right)\right)
-\]
+\end{align}
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=0.6\linewidth]{images/06/cosine_annealing}
-    \caption[Cosine Annealing LR]{Evolution of the learning rate, decreasing from $5 \times 10^{-5}$ to $1 \times 10^{-6}$}.
+    \caption[Cosine Annealing LR]{Evolution of the learning rate, decreasing from $5 \times 10^{-5}$ to $1 \times 10^{-6}$.}
     \label{fig:06_cosine_annealing}
 \end{figure}
 
@@ -465,7 +469,7 @@ In this phase, \textbf{12} experiments were conducted with a fixed set of hyperp
         Weight Decay & 1 \times $10^{-2}$ \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Phase 2 Hyperparameters]{Phase 2 Hyperparameters}
+    \caption[Phase 2 Hyperparameters]{Phase 2 Hyperparameters.}
     \label{tab:06_phase_2_hyperparameters}
 \end{table}
 
@@ -491,7 +495,7 @@ The training took around $20$ minutes for each of the models.
         128-min & 0.77 & 0.77 & 0.84 & 0.84 \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Phase 2 -- 1-Channel Transformer Metrics (A)]{1-Channel Transformer Validation Metrics (Task A)}
+    \caption[Phase 2 -- 1-Channel Transformer Metrics (A)]{1-Channel Transformer Validation Metrics (Task A).}
     \label{tab:06_phase_2_1_channel_a}
 \end{table}
 
@@ -502,7 +506,7 @@ The 32-min channel performed the best, it was therefore selected for further eva
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/phase2_A_1c_training_curves}
-    \caption[Phase 2 -- 32-min Channel Transformer Training Curves (A)]{32-min Channel Transformer Training Curves (Task A)}
+    \caption[Phase 2 -- 32-min Channel Transformer Training Curves (A)]{32-min Channel Transformer Training Curves (Task A).}
     \label{fig:06_phase_2_32_min_channel_transformer_training_curves_a}
 \end{figure}
 
@@ -545,7 +549,7 @@ It should be noted the disparity between segment-level and TIC-level metrics ($\
         \end{tabularx}
     \end{minipage}
 
-    \caption[Phase 2 -- 32-min Transformer Validation Metrics (A)]{Validation Metrics (Task A)}
+    \caption[Phase 2 -- 32-min Transformer Validation Metrics (A)]{Validation Metrics (Task A).}
     \label{tab:06_phase_2_32_min_channel_transformer_validation_,etrics_a}
 \end{table}
 
@@ -571,7 +575,7 @@ The training took around $5$ minutes for each of the models, which is proportion
         128-min & 0.88 & 0.88 & 0.90 & 0.91 \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Phase 2 -- 1-Channel Transformer Metrics (B)]{1-Channel Transformer Validation Metrics (Task B)}
+    \caption[Phase 2 -- 1-Channel Transformer Metrics (B)]{1-Channel Transformer Validation Metrics (Task B).}
     \label{tab:06_phase_2_1_channel_b}
 \end{table}
 
@@ -582,7 +586,7 @@ The 128-min channel performed the best, it was therefore chosen for further eval
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/phase2_B_1c_training_curves}
-    \caption[Phase 2 -- 128-min Channel Transformer Training Curves (B)]{128-min Channel Transformer Training Curves (Task B)}
+    \caption[Phase 2 -- 128-min Channel Transformer Training Curves (B)]{128-min Channel Transformer Training Curves (Task B).}
     \label{fig:06_phase_2_128_min_channel_transformer_training_curves_b}
 \end{figure}
 
@@ -626,7 +630,7 @@ The TIC-level aggregated predictions were again significantly better than raw se
         \end{tabularx}
     \end{minipage}
 
-    \caption[Phase 2 -- 128-min Transformer Validation Metrics (B)]{Validation Metrics (Task B)}
+    \caption[Phase 2 -- 128-min Transformer Validation Metrics (B)]{Validation Metrics (Task B).}
     \label{tab:06_phase_2_128_min_channel_transformer_validation_,etrics_b}
 \end{table}
 
@@ -654,7 +658,7 @@ The training took around $50$ minutes for the smaller model and around $70$ for 
         6-channel & 0.88 & 0.88 & 0.91 & 0.91 \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Phase 2 -- Multi-Channel Transformer Metrics (A)]{Multi-Channel Transformer Validation Metrics (Task A)}
+    \caption[Phase 2 -- Multi-Channel Transformer Metrics (A)]{Multi-Channel Transformer Validation Metrics (Task A).}
     \label{tab:06_phase_2_multi_channel_a}
 \end{table}
 
@@ -665,7 +669,7 @@ The 6-channel model performed better, it was therefore selected for further eval
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/phase2_A_6c_training_curves}
-    \caption[Phase 2 -- 6-Channel Transformer Training Curves (A)]{6-Channel Transformer Training Curves (Task A)}
+    \caption[Phase 2 -- 6-Channel Transformer Training Curves (A)]{6-Channel Transformer Training Curves (Task A).}
     \label{fig:06_phase_2_6_channel_transformer_training_curves_a}
 \end{figure}
 
@@ -705,7 +709,7 @@ The training loss continued to decrease and diverged from the validation loss at
         \end{tabularx}
     \end{minipage}
 
-    \caption[Phase 2 -- 6-Channel Transformer Validation Metrics (A)]{Validation Metrics (Task A)}
+    \caption[Phase 2 -- 6-Channel Transformer Validation Metrics (A)]{Validation Metrics (Task A).}
     \label{tab:06_phase_2_6_channel_transformer_validation_,etrics_a}
 \end{table}
 
@@ -727,7 +731,7 @@ The validation predictions for both classes were again balanced.
         6-channel & 0.89 & 0.89 & 0.92 & 0.92 \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Phase 2 -- 1-Channel Transformer Metrics (B)]{1-Channel Transformer Validation Metrics (Task B)}
+    \caption[Phase 2 -- 1-Channel Transformer Metrics (B)]{1-Channel Transformer Validation Metrics (Task B).}
     \label{tab:06_phase_2_1_channel_bx}
 \end{table}
 
@@ -738,7 +742,7 @@ The 6-channel model again outperformed the 4-channel, although almost negligibly
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/phase2_B_6c_training_curves}
-    \caption[Phase 2 -- 6-Channel Transformer Training Curves (B)]{6-Channel Transformer Training Curves (Task B)}
+    \caption[Phase 2 -- 6-Channel Transformer Training Curves (B)]{6-Channel Transformer Training Curves (Task B).}
     \label{fig:06_phase_2_6_channel_transformer_training_curves_b}
 \end{figure}
 
@@ -779,7 +783,7 @@ The training loss decreased steadily and diverged from the validation loss quite
         \end{tabularx}
     \end{minipage}
 
-    \caption[Phase 2 -- 6-Channel Transformer Validation Metrics (B)]{Validation Metrics (Task B)}
+    \caption[Phase 2 -- 6-Channel Transformer Validation Metrics (B)]{Validation Metrics (Task B).}
     \label{tab:06_phase_2_6_channel_transformer_validation_,etrics_b}
 \end{table}
 
@@ -819,7 +823,7 @@ Both fine-tunes were performed with \hyperref[subsubsec:03-lora]{LoRA} (the orig
         Weight Decay & 1 \times $10^{-2}$ \tabularnewline
         \bottomrule
     \end{tabularx}
-    \caption[Phase 2 Hyperparameters]{Phase 2 Hyperparameters}
+    \caption[Phase 2 Hyperparameters]{Phase 2 Hyperparameters.}
     \label{tab:06_phase_3_hyperparameters}
 \end{table}
 
@@ -837,7 +841,7 @@ The training took around $100$ and $30$ minutes for tasks A and B respectively.
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/phase3_A_chronos_training_curves}
-    \caption[Phase 3 -- Chronos-2 Training Curves (A)]{Chronos-2 Training Curves (Task A)}
+    \caption[Phase 3 -- Chronos-2 Training Curves (A)]{Chronos-2 Training Curves (Task A).}
     \label{fig:06_phase_3_chronos_training_curves_A}
 \end{figure}
 
@@ -877,7 +881,7 @@ The training loss steadily decreased and diverged from the validation loss at ar
         \end{tabularx}
     \end{minipage}
 
-    \caption[Phase 3 -- Chronos-2 Validation Metrics (A)]{Validation Metrics (Task A)}
+    \caption[Phase 3 -- Chronos-2 Validation Metrics (A)]{Validation Metrics (Task A).}
     \label{tab:06_phase_3_chronos_validation_,etrics_A}
 \end{table}
 
@@ -890,7 +894,7 @@ The validation predictions were a notable improvement over the previous best 6-c
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/phase3_B_chronos_training_curves}
-    \caption[Phase 3 -- Chronos-2 Training Curves (B)]{Chronos-2 Training Curves (Task B)}
+    \caption[Phase 3 -- Chronos-2 Training Curves (B)]{Chronos-2 Training Curves (Task B).}
     \label{fig:06_phase_3_chronos_training_curves_B}
 \end{figure}
 
@@ -931,7 +935,7 @@ Training loss again steadily decreased and quickly diverged from the validation 
         \end{tabularx}
     \end{minipage}
 
-    \caption[Phase 3 -- Chronos-2 Validation Metrics (B)]{Chronos-2 Validation Metrics (Task B)}
+    \caption[Phase 3 -- Chronos-2 Validation Metrics (B)]{Chronos-2 Validation Metrics (Task B).}
     \label{tab:06_phase_3_chronos_validation_metrics_B}
 \end{table}
 
@@ -949,7 +953,7 @@ The training took around $180$ and $50$ minutes for tasks A and B respectively.
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/phase3_A_qwen_training_curves}
-    \caption[Phase 3 -- Qwen 2.5 0.5B Training Curves (A)]{Qwen 2.5 0.5B Training Curves (Task A)}
+    \caption[Phase 3 -- Qwen 2.5 0.5B Training Curves (A)]{Qwen 2.5 0.5B Training Curves (Task A).}
     \label{fig:06_phase_3_qwen_training_curves_A}
 \end{figure}
 
@@ -987,18 +991,20 @@ The training took around $180$ and $50$ minutes for tasks A and B respectively.
         \end{tabularx}
     \end{minipage}
 
-    \caption[Phase 3 -- Qwen 2.5 0.5B Validation Metrics (A)]{Qwen 2.5 0.5B Validation Metrics (Task A)}
+    \caption[Phase 3 -- Qwen 2.5 0.5B Validation Metrics (A)]{Qwen 2.5 0.5B Validation Metrics (Task A).}
     \label{tab:06_phase_3_qwen_validation_metrics_A}
 \end{table}
 
 \FloatBarrier
+
+\pagebreak
 
 \subsubsection{Task B}
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/phase3_B_qwen_training_curves}
-    \caption[Phase 3 -- Qwen 2.5 0.5B Training Curves (B)]{Qwen 2.5 0.5B Training Curves (Task B)}
+    \caption[Phase 3 -- Qwen 2.5 0.5B Training Curves (B)]{Qwen 2.5 0.5B Training Curves (Task B).}
     \label{fig:06_phase_3_qwen_training_curves_B}
 \end{figure}
 
@@ -1037,7 +1043,7 @@ The training took around $180$ and $50$ minutes for tasks A and B respectively.
         \end{tabularx}
     \end{minipage}
 
-    \caption[Phase 3 --Qwen 2.5 0.5B Validation Metrics (B)]{Qwen 2.5 0.5B Validation Metrics (Task B)}
+    \caption[Phase 3 --Qwen 2.5 0.5B Validation Metrics (B)]{Qwen 2.5 0.5B Validation Metrics (Task B).}
     \label{tab:06_phase_3_qwen_validation_metrics_B}
 \end{table}
 
