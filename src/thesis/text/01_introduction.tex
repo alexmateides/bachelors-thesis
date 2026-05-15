@@ -1,0 +1,26 @@
+% Do not forget to include Introduction
+%---------------------------------------------------------------
+\chapter{Introduction}
+% uncomment the following line to create an unnumbered chapter
+%\chapter*{Introduction}\addcontentsline{toc}{chapter}{Introduction}\markboth{Introduction}{Introduction}
+%---------------------------------------------------------------
+\setcounter{page}{1}
+
+Variable stars play a fundamental role in advancing our understanding of the universe, particularly in cosmology and stellar physics.
+Their study has contributed to numerous major scientific discoveries, including the calculation of the rate of at which the universe expands. \parencite{Hubble1929} In addition, the analysis of variable stars can support the detection of extraterrestrial planets.
+
+Recent technological progress has led to substantial improvements in photometric instrumentation, enabling the development of large-scale astronomical surveys such as \textbf{OGLE} (Optical Gravitational Lensing Experiment) \parencite{Udalski2008}, the \textbf{Kepler} planet-detection mission \parencite{Borucki2010}, the \textbf{Zwicky} Transient Facility survey \parencite{Bellm2019}, and \textbf{TESS} (Transiting Exoplanet Survey Satellite) \parencite{Ricker2014}.
+These surveys generate enormous volumes of high-quality astronomical data, including light curves.
+However, the scale of these datasets makes manual classification of variable stars both time-consuming and impractical, creating a strong need for automated methods.
+
+Machine learning approaches have proven to be an effective solution for automated classification, enabling researchers to process large amounts of data quickly and accurately.
+Moreover, deep learning methods, such as CNNs, have often outperformed more traditional machine learning techniques, such as Random Forests and K-means clustering.
+
+In recent years, transformer-based models have emerged as a promising alternative to earlier deep learning approaches in many domains, including time-series classification, where they often achieve very good performance.
+Fine-tuning pretrained transformer models, such as LLMs, TSFMs and VTs, has also shown potential in a variety of tasks by leveraging the powerful pattern-recognition capabilities acquired during pretraining.
+
+In this thesis, we investigate the viability of transformer-based models for light curve classification.
+Although previous studies have already explored this topic, our goal is to provide a more comprehensive analysis by considering both transformers trained from scratch and fine-tuned large pretrained models.
+
+
+
