@@ -21,12 +21,15 @@ The thesis is a part of an ongoing research by the Astronomical Institute of Cze
 Existing pipelines for the identification of exoplanets produce large amounts of false positives, usually misclassifying a variable star as an exoplanet.
 Additional filtering of these results is therefore necessary and the proposed model (Task B) could further reduce the number of false positives by correctly identifying pulsating and rotating variables (exoplanets are extremely rare and their light curves are very similar to those of eclipsing binaries).
 
-Furthermore, two important missions regarding light curves are scheduled in the near future -- Gaia mission DR4 \parencite{Prusti2016} (new data release scheduled for December 2026) and PLATO mission \parencite{Rauer2025} (spacecraft launch scheduled for January 2027).
+Furthermore, two important missions regarding light curves are scheduled in the near future -- Gaia mission DR4 (new data release scheduled for December 2026 --~\cite{Prusti2016}) and PLATO mission (spacecraft launch scheduled for January 2027 --~\cite{Rauer2025}).
 These missions will produce large amounts of light curves that will need to be processed and our models could either directly help the filtering or serve as a foundation for more research.
 
 \section{Further Improvements}
 
 Advanced model architectures like gated FFNs, FFT-based attention and hybrid fusion techniques are used in modern transformer architectures and could be utilized to improve the model's performance.
-Unsupervised pretraining methods using unlabeled light curves are also a promising option that could help the model learn the general structure of the data without the need for limited labeled sets.
+Implementation of some gating mechanism at the branch level is also an interesting idea that could further enhance the model.
+
+Unsupervised pretraining using unlabeled light curves could allow the model learn the general structure of the data without the need for limited labeled sets.
+This is especially relevant for this task, since there exist millions of high-quality unlabeled light curves.
 
 Furthermore, having a larger labeled dataset for training would also improve the predictive performance.

@@ -39,9 +39,9 @@ We provide a summary of the $16$ experiments showcased in this work.
 
 \FloatBarrier
 
-As can be seen from \hyperref[tab:06_experiment_summary]{Table 6.21}, the Chronos-2 fine-tunes dominated both tasks, significantly outperforming the other models and was the only model that significantly outperformed the baseline CNN on both tasks.
+As can be seen from \hyperref[tab:06_experiment_summary]{Table 7.1}, the Chronos-2 fine-tunes dominated both tasks, significantly outperforming the other models and was the only model that outperformed the baseline CNN on both tasks.
 
-Because of the low gap between the baseline CNN and the evaluated models, we theorize that the majority of the performance was decided by the multi-channel architecture and light curve segmentation.
+Because of the low gap between the baseline CNN and the evaluated models that had access to the same training information (all 6 channels enabled), we theorize that the majority of the performance was decided by the multi-channel architecture and light curve segmentation.
 The Chronos-2 fine-tune nonetheless consistently beat the CNN which showcased the adaptability of large pretrained transformer models on our task.
 
 \section{Final Model}
@@ -160,12 +160,16 @@ We have investigated the 5 misclassified eclipsing stars and found out that each
     \label{tab:06_misclassified_eclipsing_stars}
 \end{table}
 
+\FloatBarrier
+
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\linewidth]{images/06/long_period_star}
     \caption[Long Period EA Star]{TIC 288346083, a misclassified eclipsing star with atypically long period.}
     \label{fig:06_long_period_star}
 \end{figure}
+
+\FloatBarrier
 
 Despite the worse performance on the \textbf{eclipsing} class, the model has generalized well on the remaining 2 classes, their test metrics being nearly identical to the validation metrics.
 
