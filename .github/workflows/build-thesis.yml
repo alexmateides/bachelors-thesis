@@ -51,7 +51,7 @@ jobs:
 
       # 4. Add your custom domain (CNAME)
       - name: Create CNAME
-        run: echo "bachelors-thesis.mateides.com" > output/CNAME
+        run: echo "bachelor-thesis.mateides.com" > output/CNAME
 
       # 5. Deploy everything in output/ (thesis.pdf, index.html, CNAME) to gh-pages
       - name: Deploy to GitHub Pages
